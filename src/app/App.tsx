@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BookOpen, Package, CheckCircle, Heart, Sparkles, ChevronDown } from "lucide-react";
 import img1 from "../imports/IMG_20260429_180019.jpg";
-import img2 from "../imports/20260420_210429_099.jpg";
+import img2 from "../imports/IMG_20260326_014023.jpg";
 import img3 from "../imports/IMG_20260318_132452.jpg";
 import img4 from "../imports/IMG_20260326_014023.jpg";
 import img5 from "../imports/IMG_20260326_014006.jpg";
