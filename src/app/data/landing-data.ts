@@ -1,14 +1,14 @@
 import { BookOpen, Package, CheckCircle, Heart, Sparkles } from "lucide-react";
 
-import img2 from "../imports/IMG_20260326_014023.jpg";
-import img3 from "../imports/IMG_20260416_230542.jpg";
-import img4 from "../imports/IMG_20260429_170011.jpg";
-import img5 from "../imports/IMG_20260104_124854.jpg";
-import img6 from "../imports/IMG_20260416_230542.jpg";
-import img7 from "../imports/IMG_20260429_170011.jpg";
-import img8 from "../imports/IMG_20260420_134019.jpg";
-import img9 from "../imports/IMG_20260429_180008.jpg";
-import img10 from "../imports/IMG_20260422_201033_471.jpg";
+import img2 from "../../imports/IMG_20260326_014023.jpg";
+import img3 from "../../imports/IMG_20260416_230542.jpg";
+import img4 from "../../imports/IMG_20260429_170011.jpg";
+import img5 from "../../imports/IMG_20260104_124854.jpg";
+import img6 from "../../imports/IMG_20260416_230542.jpg";
+import img7 from "../../imports/IMG_20260429_170011.jpg";
+import img8 from "../../imports/IMG_20260420_134019.jpg";
+import img9 from "../../imports/IMG_20260429_180008.jpg";
+import img10 from "../../imports/IMG_20260422_201033_471.jpg";
 
 export const steps = [
   {
