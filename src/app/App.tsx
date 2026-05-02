@@ -2,9 +2,9 @@ import { useState } from "react";
 import { BookOpen, Package, CheckCircle, Heart, Sparkles, ChevronDown } from "lucide-react";
 import img1 from "../imports/IMG_20260429_180019.jpg";
 import img2 from "../imports/IMG_20260326_014023.jpg";
-import img3 from "../imports/IMG_20260318_132452.jpg";
-import img4 from "../imports/IMG_20260326_014023.jpg";
-import img5 from "../imports/IMG_20260326_014006.jpg";
+import img3 from "../imports/IMG_20260416_230542.jpg";
+import img4 from "../imports/IMG_20260429_170011.jpg";
+import img5 from "../imports/IMG_20260104_124854.jpg";
 import img6 from "../imports/IMG_20260416_230542.jpg";
 import img7 from "../imports/IMG_20260429_170011.jpg";
 import img8 from "../imports/IMG_20260420_134019.jpg";
@@ -226,7 +226,7 @@ export default function App() {
               { name: 'Soft Cream', color: '#FDF0D5', img: img9 },
               { name: 'Old Library', color: '#7F4F24', img: img10 }
             ].map((style, idx) => (
-              <div key={idx} className="rounded-xl overflow-hidden shadow" style={{ backgroundColor: '#FDF0D5' }}>
+              <div key={idx} className="rounded-xl overflow-hidden shadow" style={{ backgroundColor: '#d4a373' }}>
                 <div className="aspect-square" style={{ backgroundColor: style.color }}>
                   <img src={style.img} alt={style.name} className="w-full h-full object-cover" />
                 </div>
