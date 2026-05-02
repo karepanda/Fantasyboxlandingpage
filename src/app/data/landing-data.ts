@@ -41,6 +41,8 @@ export const products = [
       "Quote postcard",
     ],
     img: img2,
+    footerNote: "Final price depends on the selected book and shipping",
+    buttonText: "Request this box",
   },
   {
     name: "Cozy FantasyBox",
@@ -52,16 +54,20 @@ export const products = [
       "Extra stationery",
     ],
     img: img3,
+    footerNote: "Final price depends on the selected book and shipping",
+    buttonText: "Request this box",
   },
   {
     name: "Set of BookMarks",
     desc: "Curated collection of handmade bookmarks",
     includes: [
-      "5 unique bookmarks",
+      "3 unique bookmarks",
       "Various styles and materials",
       "Gift-ready packaging",
     ],
     img: img4,
+    footerNote: "Final price depends on the shipping",
+    buttonText: "Request this set",
   },
   {
     name: "Knitted Sleeve",
@@ -72,6 +78,8 @@ export const products = [
       "Choice of colors",
     ],
     img: img5,
+    footerNote: "Final price depends on the shipping",
+    buttonText: "Request this sleeve",
   },
 ];
 

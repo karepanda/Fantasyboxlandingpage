@@ -23,6 +23,8 @@ export function ProductsSection({ onRequestBox }: ProductsSectionProps) {
                             includes={product.includes}
                             img={product.img}
                             onRequestBox={onRequestBox}
+                            footerNote={product.footerNote}
+                            buttonText={product.buttonText}
                         />
                     ))}
                 </div>

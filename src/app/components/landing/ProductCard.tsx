@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CheckCircle } from "lucide-react";
 
 import { FantasyButton } from "./FantasyButton";
@@ -8,6 +9,8 @@ interface ProductCardProps {
     includes: string[];
     img: string;
     onRequestBox: () => void;
+    footerNote?: string;
+    buttonText?: string;
 }
 
 export function ProductCard({
@@ -16,10 +19,20 @@ export function ProductCard({
                                 includes,
                                 img,
                                 onRequestBox,
+                                footerNote = "Final price depends on the selected book and shipping",
+                                buttonText = "Request this box",
                             }: ProductCardProps) {
+    const [isZoomed, setIsZoomed] = useState(false);
+
     return (
         <div className="fb-card">
-            <img src={img} alt={name} className="h-64 w-full object-cover" />
+            {/* Image with hover overlay */}
+            <div className="group relative cursor-pointer" onClick={() => setIsZoomed(true)}>
+                <img src={img} alt={name} className="h-64 w-full object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                    <p className="text-white text-center text-lg font-medium">View image</p>
+                </div>
+            </div>
 
             <div className="p-6">
                 <h3 className="fb-heading mb-2 text-2xl">
@@ -49,13 +62,27 @@ export function ProductCard({
                 </div>
 
                 <p className="mb-4 text-sm italic opacity-70">
-                    Final price depends on the selected book and shipping
+                    {footerNote}
                 </p>
 
                 <FantasyButton variant="coffee" onClick={onRequestBox}>
-                    Request this box
+                    {buttonText}
                 </FantasyButton>
             </div>
+
+            {/* Lightbox Modal */}
+            {isZoomed && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-pointer"
+                    onClick={() => setIsZoomed(false)}
+                >
+                    <img
+                        src={img}
+                        alt={name}
+                        className="max-h-screen max-w-screen object-contain"
+                    />
+                </div>
+            )}
         </div>
     );
 }
