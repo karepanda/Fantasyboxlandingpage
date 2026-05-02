@@ -19,7 +19,6 @@ export function ProductCard({
                                 desc,
                                 includes,
                                 img,
-                                onRequestBox,
                                 footerNote = "Final price depends on the selected book and shipping",
                                 buttonText = "Request this box",
                             }: ProductCardProps) {
