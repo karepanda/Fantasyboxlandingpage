@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle } from "lucide-react";
 
 import { FantasyButton } from "./FantasyButton";
+import { RequestForm } from "./RequestForm";
 
 interface ProductCardProps {
     name: string;
@@ -23,6 +24,7 @@ export function ProductCard({
                                 buttonText = "Request this box",
                             }: ProductCardProps) {
     const [isZoomed, setIsZoomed] = useState(false);
+    const [isFormOpen, setIsFormOpen] = useState(false);
 
     return (
         <div className="fb-card">
@@ -65,7 +67,7 @@ export function ProductCard({
                     {footerNote}
                 </p>
 
-                <FantasyButton variant="coffee" onClick={onRequestBox}>
+                <FantasyButton variant="coffee" onClick={() => setIsFormOpen(true)}>
                     {buttonText}
                 </FantasyButton>
             </div>
@@ -82,6 +84,14 @@ export function ProductCard({
                         className="max-h-screen max-w-screen object-contain"
                     />
                 </div>
+            )}
+
+            {/* Request Form Modal */}
+            {isFormOpen && (
+                <RequestForm
+                    productType={name}
+                    onClose={() => setIsFormOpen(false)}
+                />
             )}
         </div>
     );
