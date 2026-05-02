@@ -16,7 +16,7 @@
     min-height: 100vh;
     background-color: var(--fb-cream);
     color: var(--fb-text);
-    font-family: var(--fb-font-body);
+    font-family: var(--fb-font-body), serif;
 }
 
 .fb-section {
@@ -51,7 +51,7 @@
 }
 
 .fb-heading {
-    font-family: var(--fb-font-heading);
+    font-family: var(--fb-font-heading), serif;
     color: var(--fb-dark);
     line-height: 1.3;
 }
