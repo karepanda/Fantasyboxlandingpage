@@ -22,7 +22,7 @@ export function FaqSection() {
                         >
                             <button
                                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                                className="flex w-full items-center justify-between p-5 text-left"
+                                className="flex w-full items-center justify-between p-5 text-left" style={{cursor: 'pointer'}}
                             >
                 <span className="fb-heading text-lg text-[var(--fb-text)]">
                   {faq.q}

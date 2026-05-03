@@ -84,6 +84,7 @@
     padding: 1rem 1.5rem;
     font-size: 1.0625rem;
     transition: all 150ms ease;
+    cursor: pointer;
 }
 
 .fb-secondary-button {
@@ -95,6 +96,7 @@
     padding: 1rem 1.5rem;
     font-size: 1.0625rem;
     transition: all 150ms ease;
+    cursor: pointer;
 }
 
 .fb-coffee-button {
@@ -104,6 +106,7 @@
     color: var(--fb-cream);
     padding: 0.75rem 1.5rem;
     transition: all 150ms ease;
+    cursor: pointer;
 }
 
 .fb-card {
