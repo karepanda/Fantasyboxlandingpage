@@ -6,7 +6,6 @@ import {
   HeroSection,
   HowItWorksSection,
   ProductsSection,
-  StickyCta,
   WhatsInsideSection,
 } from "./components/landing";
 
@@ -17,7 +16,7 @@ export default function App() {
 
   return (
     <div className="fantasy-page">
-      <HeroSection onRequestBox={scrollToForm} />
+      <HeroSection />
 
       <HowItWorksSection />
 
@@ -32,10 +31,6 @@ export default function App() {
       <FaqSection />
 
       <CtaSection />
-
-      <StickyCta onRequestBox={scrollToForm} />
-
-      <div className="h-20" />
     </div>
   );
 }

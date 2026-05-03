@@ -1,13 +1,8 @@
 import { BookOpen } from "lucide-react";
-
 import img1 from "../../../imports/IMG_20260429_180019.jpg";
 import { FantasyButton } from "./FantasyButton";
 
-interface HeroSectionProps {
-    onRequestBox: () => void;
-}
-
-export function HeroSection({ onRequestBox }: HeroSectionProps) {
+export function HeroSection() {
     const scrollToProducts = () => {
         document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
     };
@@ -32,10 +27,6 @@ export function HeroSection({ onRequestBox }: HeroSectionProps) {
                 </p>
 
                 <div className="mb-8 flex flex-col gap-3">
-                    <FantasyButton onClick={onRequestBox}>
-                        Request your FantasyBox
-                    </FantasyButton>
-
                     <FantasyButton variant="secondary" onClick={scrollToProducts}>
                         Explore the boxes
                     </FantasyButton>
