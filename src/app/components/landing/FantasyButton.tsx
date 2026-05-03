@@ -1,3 +1,5 @@
+import React from "react";
+
 interface FantasyButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: "primary" | "secondary" | "coffee" | "sticky";
