@@ -1,6 +1,9 @@
 import { FantasyButton } from "./FantasyButton";
 
 export function CtaSection() {
+    const scrollToProducts = () => {
+        document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+    };
     return (
         <section id="cta-section" className="fb-section fb-section-linen py-20">
             <div className="fb-container-sm text-center">
@@ -13,8 +16,8 @@ export function CtaSection() {
                     calculate the final price for your personalized box.
                 </p>
 
-                <FantasyButton className="shadow-lg">
-                    Fill out the form
+                <FantasyButton className="shadow-lg" onClick={scrollToProducts}>
+                    Explore the boxes
                 </FantasyButton>
 
                 <p className="mt-4 text-sm opacity-60">
