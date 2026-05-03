@@ -25,6 +25,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: '/Fantasyboxlandingpage/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
