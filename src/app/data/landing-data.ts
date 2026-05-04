@@ -1,4 +1,4 @@
-import { BookOpen, Package, CheckCircle, Heart, Sparkles } from "lucide-react";
+import { BookOpen, Package, CheckCircle } from "lucide-react";
 
 import img2 from "../../imports/IMG_20260326_014023.jpg";
 import img3 from "../../imports/IMG_20260416_230542.jpg";
@@ -30,56 +30,56 @@ export const steps = [
 
 export const products = [
   {
-    name: "Classic FantasyBox",
-    desc: "The essential reading experience with all the cozy details",
+    name: "classicBox.name",
+    desc: "classicBox.desc",
     includes: [
-      "Your chosen book",
-      "Bookmark",
-      "Index flags",
-      "Sticky notes",
-      "Special pen",
-      "Quote postcard",
+      "classicBox.includes.book",
+      "classicBox.includes.bookmark",
+      "classicBox.includes.indexFlags",
+      "classicBox.includes.stickyNotes",
+      "classicBox.includes.pen",
+      "classicBox.includes.postcard",
     ],
     img: img2,
-    footerNote: "Final price depends on the selected book and shipping",
-    buttonText: "Request this box",
+    footerNote: "footerNote",
+    buttonText: "buttonText",
   },
   {
-    name: "Cozy FantasyBox",
-    desc: "Enhanced comfort with extra warmth and aesthetic touches",
+    name: "cozyBox.name",
+    desc: "cozyBox.desc",
     includes: [
-      "Everything in Classic",
-      "Knitted book sleeve",
-      "Thematic candle",
-      "Extra stationery",
+      "cozyBox.includes.everything",
+      "cozyBox.includes.sleeve",
+      "cozyBox.includes.candle",
+      "cozyBox.includes.stationery",
     ],
     img: img3,
-    footerNote: "Final price depends on the selected book and shipping",
-    buttonText: "Request this box",
+    footerNote: "footerNote",
+    buttonText: "buttonText",
   },
   {
-    name: "Set of BookMarks",
-    desc: "Curated collection of handmade bookmarks",
+    name: "bookmarks.name",
+    desc: "bookmarks.desc",
     includes: [
-      "3 unique bookmarks",
-      "Various styles and materials",
-      "Gift-ready packaging",
+      "bookmarks.includes.collection",
+      "bookmarks.includes.styles",
+      "bookmarks.includes.packaging",
     ],
     img: img4,
-    footerNote: "Final price depends on the shipping",
-    buttonText: "Request this set",
+    footerNote: "footerNote",
+    buttonText: "buttonText",
   },
   {
-    name: "Knitted Sleeve",
-    desc: "Handmade sleeve for your book or e-reader",
+    name: "sleeve.name",
+    desc: "sleeve.desc",
     includes: [
-      "Custom fit",
-      "Cozy knit material",
-      "Choice of colors",
+      "sleeve.includes.fit",
+      "sleeve.includes.material",
+      "sleeve.includes.colors",
     ],
     img: img5,
-    footerNote: "Final price depends on the shipping",
-    buttonText: "Request this sleeve",
+    footerNote: "footerNote",
+    buttonText: "buttonText",
   },
 ];
 
@@ -108,59 +108,5 @@ export const aesthetics = [
     name: "Old Library",
     color: "#7F4F24",
     img: img10,
-  },
-];
-
-export const insideItems = [
-  {
-    icon: BookOpen,
-    text: "Book chosen by you",
-  },
-  {
-    icon: Sparkles,
-    text: "Handmade bookmark",
-  },
-  {
-    icon: Heart,
-    text: "Index flags",
-  },
-  {
-    icon: Package,
-    text: "Transparent sticky notes",
-  },
-  {
-    icon: BookOpen,
-    text: "Special pen",
-  },
-  {
-    icon: Heart,
-    text: "Quote postcard",
-  },
-  {
-    icon: Sparkles,
-    text: "Thematic extras",
-  },
-  {
-    icon: Package,
-    text: "Careful packaging",
-  },
-];
-
-export const faqs = [
-  {
-    q: "Is FantasyBox a subscription?",
-    a: "No, you buy only when you want. There is no recurring subscription.",
-  },
-  {
-    q: "Can I choose the book?",
-    a: "Yes! You choose the book you want, and we build the perfect cozy experience around it.",
-  },
-  {
-    q: "Why do I need to fill out a form?",
-    a: "The final price depends on your chosen book and shipping destination. We calculate a personalized price for you.",
-  },
-  {
-    q: "Can I buy it as a gift?",
-    a: "Absolutely! FantasyBox is designed to be the perfect gift for book lovers.",
   },
 ];

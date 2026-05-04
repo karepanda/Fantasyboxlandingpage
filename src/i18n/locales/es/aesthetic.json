@@ -1,0 +1,12 @@
+{
+  "title": "Elige Tu Estética",
+  "subtitle": "Selecciona el ambiente que se adapte a tu estilo de lectura",
+  "aesthetics": {
+    "cozyBeige": "Beige Acogedor",
+    "darkAcademy": "Academia Oscura",
+    "vintageCoffee": "Café Vintage",
+    "softCream": "Crema Suave",
+    "oldLibrary": "Biblioteca Antigua"
+  }
+}
+

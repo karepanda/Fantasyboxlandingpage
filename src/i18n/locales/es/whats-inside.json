@@ -1,0 +1,15 @@
+{
+  "title": "¿Qué Hay Dentro de Tu FantasyBox?",
+  "subtitle": "Cada caja contiene artículos cuidadosamente curados para mejorar tu ritual de lectura",
+  "items": {
+    "book": "Libro elegido por ti",
+    "bookmark": "Marcapáginas hecho a mano",
+    "flags": "Banderas índice",
+    "notes": "Notas adhesivas transparentes",
+    "pen": "Bolígrafo especial",
+    "postcard": "Postal de cita",
+    "extras": "Extras temáticos",
+    "packaging": "Empaque cuidadoso"
+  }
+}
+

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { products } from "../../data/landing-data";
 import { ProductCard } from "./ProductCard";
 import { SectionTitle } from "./SectionTitle";
@@ -7,11 +8,13 @@ interface ProductsSectionProps {
 }
 
 export function ProductsSection({ onRequestBox }: ProductsSectionProps) {
+    const { t } = useTranslation("products");
+
     return (
         <section id="products" className="fb-section fb-section-linen">
             <div className="fb-container">
                 <SectionTitle>
-                    Explore the boxes
+                    {t("title")}
                 </SectionTitle>
 
                 <div className="space-y-6">

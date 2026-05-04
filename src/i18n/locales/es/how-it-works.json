@@ -1,0 +1,18 @@
+{
+  "title": "Cómo Funciona",
+  "steps": {
+    "one": {
+      "title": "Elige tu libro",
+      "desc": "Cuéntanos cuál es el próximo libro que deseas leer"
+    },
+    "two": {
+      "title": "Elige el estilo de caja",
+      "desc": "Selecciona entre nuestras opciones de cajas curadas y agrega extras"
+    },
+    "three": {
+      "title": "Obtén tu precio",
+      "desc": "Completa el formulario para recibir el precio final con envío"
+    }
+  }
+}
+

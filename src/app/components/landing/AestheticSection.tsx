@@ -1,16 +1,19 @@
+import { useTranslation } from "react-i18next";
 import { aesthetics } from "../../data/landing-data";
 import { SectionTitle } from "./SectionTitle";
 
 export function AestheticSection() {
+    const { t } = useTranslation("aesthetic");
+
     return (
         <section className="fb-section">
             <div className="fb-container">
                 <SectionTitle className="mb-4">
-                    Choose your aesthetic
+                    {t("title")}
                 </SectionTitle>
 
                 <p className="mb-12 text-center opacity-80">
-                    Each box can be customized to match your reading mood
+                    {t("subtitle")}
                 </p>
 
                 <div className="grid grid-cols-2 gap-4">

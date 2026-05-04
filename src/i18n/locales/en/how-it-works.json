@@ -1,0 +1,18 @@
+{
+  "title": "How It Works",
+  "steps": {
+    "one": {
+      "title": "Choose your book",
+      "desc": "Tell us which book you want to read next"
+    },
+    "two": {
+      "title": "Pick your box style",
+      "desc": "Select from our curated box options and add extras"
+    },
+    "three": {
+      "title": "Get your price",
+      "desc": "Fill out the form to receive the final price with shipping"
+    }
+  }
+}
+

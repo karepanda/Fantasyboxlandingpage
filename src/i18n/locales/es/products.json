@@ -1,0 +1,48 @@
+{
+  "title": "Nuestros Productos",
+  "footerNote": "El precio final depende del libro seleccionado y del envío",
+  "buttonText": "Solicitar esta caja",
+  "viewImage": "Ver imagen",
+  "includesLabel": "Incluye:",
+  "classicBox": {
+    "name": "FantasyBox Clásico",
+    "desc": "La experiencia de lectura esencial con todos los detalles acogedores",
+    "includes": {
+      "book": "Tu libro elegido",
+      "bookmark": "Marcapáginas",
+      "indexFlags": "Banderas índice",
+      "stickyNotes": "Notas adhesivas",
+      "pen": "Bolígrafo especial",
+      "postcard": "Postal de cita"
+    }
+  },
+  "cozyBox": {
+    "name": "FantasyBox Acogedor",
+    "desc": "Comodidad mejorada con calidez extra y toques estéticos",
+    "includes": {
+      "everything": "Todo lo del Clásico",
+      "sleeve": "Funda tejida para libros",
+      "candle": "Vela temática",
+      "stationery": "Papelería extra"
+    }
+  },
+  "bookmarks": {
+    "name": "Set de Marcapáginas",
+    "desc": "Colección curada de marcapáginas hechos a mano",
+    "includes": {
+      "collection": "3 marcapáginas únicos",
+      "styles": "Varios estilos y materiales",
+      "packaging": "Empaque listo para regalo"
+    }
+  },
+  "sleeve": {
+    "name": "Funda Tejida",
+    "desc": "Funda hecha a mano para tu libro o e-reader",
+    "includes": {
+      "fit": "Ajuste personalizado",
+      "material": "Material tejido acogedor",
+      "colors": "Variedad de colores"
+    }
+  }
+}
+

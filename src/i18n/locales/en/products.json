@@ -1,0 +1,48 @@
+{
+  "title": "Our Products",
+  "buttonText": "Request this box",
+  "viewImage": "View image",
+  "includesLabel": "Includes:",
+  "footerNote": "Final price depends on the selected book and shipping",
+  "classicBox": {
+    "name": "Classic FantasyBox",
+    "desc": "The essential reading experience with all the cozy details",
+    "includes": {
+      "book": "Your chosen book",
+      "bookmark": "Bookmark",
+      "indexFlags": "Index flags",
+      "stickyNotes": "Sticky notes",
+      "pen": "Special pen",
+      "postcard": "Quote postcard"
+    }
+  },
+  "cozyBox": {
+    "name": "Cozy FantasyBox",
+    "desc": "Enhanced comfort with extra warmth and aesthetic touches",
+    "includes": {
+      "everything": "Everything in Classic",
+      "sleeve": "Knitted book sleeve",
+      "candle": "Thematic candle",
+      "stationery": "Extra stationery"
+    }
+  },
+  "bookmarks": {
+    "name": "Set of BookMarks",
+    "desc": "Curated collection of handmade bookmarks",
+    "includes": {
+      "collection": "3 unique bookmarks",
+      "styles": "Various styles and materials",
+      "packaging": "Gift-ready packaging"
+    }
+  },
+  "sleeve": {
+    "name": "Knitted Sleeve",
+    "desc": "Handmade sleeve for your book or e-reader",
+    "includes": {
+      "fit": "Custom fit",
+      "material": "Cozy knit material",
+      "colors": "Choice of colors"
+    }
+  }
+}
+
