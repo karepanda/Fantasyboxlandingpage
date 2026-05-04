@@ -127,7 +127,7 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                         </div>
                     ) : (
                         <>
-                            <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-gray-200 bg-[var(--fb-cream)]">
+                            <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-gray-200 bg-[var(--fb-tan)]">
                                 <h2 className="fb-heading text-2xl">Request {productType}</h2>
                                 <button
                                     onClick={onClose}

@@ -66,50 +66,6 @@ export interface ProductsTranslations {
 
 }
 
-/*export interface ProductCardTranslations {
-  classicBox: {
-    name: string;
-    desc: string;
-    footerNote: string;
-    buttonText: string;
-    includes: {
-      book: string;
-      bookmark: string;
-      indexFlags: string;
-      stickyNotes: string;
-      pen: string;
-      postcard: string;
-    };
-  };
-  cozyBox: {
-    name: string;
-    desc: string;
-    includes: {
-      everything: string;
-      sleeve: string;
-      candle: string;
-      stationery: string;
-    };
-  };
-  bookmarks: {
-    name: string;
-    desc: string;
-    includes: {
-      collection: string;
-      styles: string;
-      packaging: string;
-    };
-  };
-  sleeve: {
-    name: string;
-    desc: string;
-    includes: {
-      fit: string;
-      material: string;
-      colors: string;
-    };
-  };
-}*/
 
 export interface AestheticTranslations {
   title: string;
@@ -207,7 +163,6 @@ export interface Resources {
   faq: FaqTranslations;
   cta: CtaTranslations;
   footer: FooterTranslations;
-//  productCard: ProductCardTranslations;
 }
 
 // Declare module to enable type-safe useTranslation hook
