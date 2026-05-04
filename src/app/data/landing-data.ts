@@ -1,9 +1,9 @@
 import { BookOpen, Package, CheckCircle } from "lucide-react";
 
-import img2 from "../../imports/IMG_20260326_014023.jpg";
-import img3 from "../../imports/IMG_20260416_230542.jpg";
-import img4 from "../../imports/IMG_20260429_170011.jpg";
-import img5 from "../../imports/IMG_20260104_124854.jpg";
+import img2 from "../../imports/classicFantasyBoxOrange.jpg";
+import img3 from "../../imports/cozyFantasyBoxBlue.jpg";
+import img4 from "../../imports/bookmarksSet.jpg";
+import img5 from "../../imports/bookSleeve.jpg";
 import img6 from "../../imports/cozy beige.jpg";
 import img7 from "../../imports/dark academia.jpg";
 import img8 from "../../imports/vintage coffee.jpg";

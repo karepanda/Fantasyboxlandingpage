@@ -1,6 +1,6 @@
 import { BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import img1 from "../../../imports/IMG_20260429_180019.jpg";
+import img1 from "../../../imports/purpleAndGreenClassicFantasyBox2.jpg";
 import { FantasyButton } from "./FantasyButton";
 
 export function HeroSection() {
