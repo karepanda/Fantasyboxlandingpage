@@ -2,7 +2,7 @@ import { Sparkles } from "lucide-react";
 
 export function EmotionalSection() {
     return (
-        <section className="fb-section fb-section-tan py-20">
+        <section className="fb-section --fb-cream py-20">
             <div className="fb-container-sm text-center">
                 <Sparkles className="fb-icon-dark mx-auto mb-6 h-12 w-12" />
 

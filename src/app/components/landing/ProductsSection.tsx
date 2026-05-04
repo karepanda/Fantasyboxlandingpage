@@ -8,7 +8,7 @@ interface ProductsSectionProps {
 
 export function ProductsSection({ onRequestBox }: ProductsSectionProps) {
     return (
-        <section id="products" className="fb-section fb-section-peach">
+        <section id="products" className="fb-section fb-section-linen">
             <div className="fb-container">
                 <SectionTitle>
                     Explore the boxes

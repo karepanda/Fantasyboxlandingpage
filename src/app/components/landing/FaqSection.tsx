@@ -8,7 +8,7 @@ export function FaqSection() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     return (
-        <section className="fb-section fb-section-peach">
+        <section className="fb-section fb-section-linen">
             <div className="fb-container">
                 <SectionTitle>
                     Frequently Asked Questions

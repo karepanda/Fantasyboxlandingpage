@@ -5,7 +5,7 @@ export function CtaSection() {
         document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
     };
     return (
-        <section id="cta-section" className="fb-section fb-section-linen py-20">
+        <section id="cta-section" className="fb-section --fb-cream py-20">
             <div className="fb-container-sm text-center">
                 <h2 className="fb-heading mb-4 text-3xl">
                     Ready to build your FantasyBox?
