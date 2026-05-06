@@ -91,7 +91,8 @@ export function ProductCard({
             {/* Request Form Modal */}
             {isFormOpen && (
                 <RequestForm
-                    productType={translatedName}
+                    productType={t(name, { lng: "en" })}
+                    productLabel={translatedName}
                     onClose={() => setIsFormOpen(false)}
                 />
             )}

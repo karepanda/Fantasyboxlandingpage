@@ -1,0 +1,79 @@
+{
+  "success": {
+    "title": "Request Received! 🎉",
+    "message": "We'll email you soon with the final price and details. Thank you for your interest in fantasyBox!",
+    "close": "Close"
+  },
+  "header": {
+    "title": "Request {{productType}}",
+    "closeAriaLabel": "Close form"
+  },
+  "sections": {
+    "shipmentDetails": "Shipment Details",
+    "bookSelection": "Book Selection",
+    "readerType": "Reader Type",
+    "chooseColor": "Choose a Color",
+    "doubtsOrComments": "Doubts or Comments"
+  },
+  "fields": {
+    "fullName": {
+      "label": "Full Name ",
+      "placeholder": "John Doe",
+      "required": "Full name is required"
+    },
+    "email": {
+      "label": "Email ",
+      "placeholder": "john@example.com",
+      "required": "Email is required",
+      "invalid": "Invalid email address"
+    },
+    "shippingAddress": {
+      "label": "Shipping Address ",
+      "placeholder": "123 Main Street, Apt 4B",
+      "required": "Shipping address is required"
+    },
+    "city": {
+      "label": "City ",
+      "placeholder": "New York",
+      "required": "City is required"
+    },
+    "zipCode": {
+      "label": "ZIP Code ",
+      "placeholder": "10001",
+      "required": "ZIP code is required"
+    },
+    "phoneNumber": {
+      "label": "Phone Number ",
+      "placeholder": "+34 555 000 000",
+      "required": "Phone number is required"
+    },
+    "bookTitle": {
+      "label": "Book Title and Author/Link ",
+      "placeholder": "e.g., 'The House in the Cerulean Sea by TJ Klune' or link",
+      "required": "Book title and author/link is required"
+    },
+    "readerType": {
+      "required": "Reader type is required",
+      "physical": "Physical Book",
+      "electronic": "Electronic Reader (Kindle/Kobo)"
+    },
+    "readerModel": {
+      "label": "Electronic Reader Model ",
+      "placeholder": "e.g., Kindle Paperwhite 2021",
+      "required": "Reader model is required"
+    },
+    "selectedColor": {
+      "required": "Color selection is required"
+    },
+    "doubts": {
+      "placeholder": "Tell us anything else you'd like us to know..."
+    }
+  },
+  "errors": {
+    "submit": "Failed to send your request. Please try again."
+  },
+  "actions": {
+    "sending": "Sending...",
+    "submit": "Submit Request"
+  }
+}

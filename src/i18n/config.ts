@@ -13,6 +13,7 @@ import emotionalEn from './locales/en/emotional.json';
 import faqEn from './locales/en/faq.json';
 import ctaEn from './locales/en/cta.json';
 import footerEn from './locales/en/footer.json';
+import requestFormEn from './locales/en/request-form.json';
 
 import commonEs from './locales/es/common.json';
 import heroEs from './locales/es/hero.json';
@@ -24,6 +25,7 @@ import emotionalEs from './locales/es/emotional.json';
 import faqEs from './locales/es/faq.json';
 import ctaEs from './locales/es/cta.json';
 import footerEs from './locales/es/footer.json';
+import requestFormEs from './locales/es/request-form.json';
 
 
 const resources = {
@@ -38,6 +40,7 @@ const resources = {
     faq: faqEn,
     cta: ctaEn,
     footer: footerEn,
+    requestForm: requestFormEn,
   },
   es: {
     common: commonEs,
@@ -50,6 +53,7 @@ const resources = {
     faq: faqEs,
     cta: ctaEs,
     footer: footerEs,
+    requestForm: requestFormEs,
   },
 };
 

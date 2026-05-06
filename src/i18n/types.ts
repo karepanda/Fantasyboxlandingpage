@@ -152,6 +152,86 @@ export interface FooterTranslations {
   tagline: string;
 }
 
+export interface RequestFormTranslations {
+  success: {
+    title: string;
+    message: string;
+    close: string;
+  };
+  header: {
+    title: string;
+    closeAriaLabel: string;
+  };
+  sections: {
+    shipmentDetails: string;
+    bookSelection: string;
+    readerType: string;
+    chooseColor: string;
+    doubtsOrComments: string;
+  };
+  fields: {
+    fullName: {
+      label: string;
+      placeholder: string;
+      required: string;
+    };
+    email: {
+      label: string;
+      placeholder: string;
+      required: string;
+      invalid: string;
+    };
+    shippingAddress: {
+      label: string;
+      placeholder: string;
+      required: string;
+    };
+    city: {
+      label: string;
+      placeholder: string;
+      required: string;
+    };
+    zipCode: {
+      label: string;
+      placeholder: string;
+      required: string;
+    };
+    phoneNumber: {
+      label: string;
+      placeholder: string;
+      required: string;
+    };
+    bookTitle: {
+      label: string;
+      placeholder: string;
+      required: string;
+    };
+    readerType: {
+      required: string;
+      physical: string;
+      electronic: string;
+    };
+    readerModel: {
+      label: string;
+      placeholder: string;
+      required: string;
+    };
+    selectedColor: {
+      required: string;
+    };
+    doubts: {
+      placeholder: string;
+    };
+  };
+  errors: {
+    submit: string;
+  };
+  actions: {
+    sending: string;
+    submit: string;
+  };
+}
+
 export interface Resources {
   common: CommonTranslations;
   hero: HeroTranslations;
@@ -163,6 +243,7 @@ export interface Resources {
   faq: FaqTranslations;
   cta: CtaTranslations;
   footer: FooterTranslations;
+  requestForm: RequestFormTranslations;
 }
 
 // Declare module to enable type-safe useTranslation hook
