@@ -3,9 +3,11 @@ import { X, CheckCircle } from "lucide-react";
 import { RemoveScroll } from "react-remove-scroll";
 import { useState } from "react";
 import { FantasyButton } from "./FantasyButton";
+import {useTranslation} from "react-i18next";
 
 interface RequestFormProps {
     productType: string;
+    productLabel: string;
     onClose: () => void;
 }
 
@@ -36,7 +38,9 @@ const COLOR_OPTIONS = [
     { name: "Pink", value: "#EC4899" },
 ];
 
-export function RequestForm({ productType, onClose }: RequestFormProps) {
+export function RequestForm({ productType, productLabel, onClose }: RequestFormProps) {
+    const { t } = useTranslation("requestForm");
+
     const { register, handleSubmit, formState: { errors }, watch } = useForm<FormData>({
         defaultValues: {
             selectedColor: COLOR_OPTIONS[0].value,
@@ -117,22 +121,27 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                         // Success Screen
                         <div className="bg-[var(--fb-section-peach)] flex flex-col items-center justify-center p-8 h-full rounded-lg">
                             <CheckCircle className="w-16 h-16 text-green-600 mb-4" />
-                            <h2 className="fb-heading text-2xl text-center mb-4">Request Received! 🎉</h2>
+
+                            <h2 className="fb-heading text-2xl text-center mb-4">{t("success.title")}</h2>
+
                             <p className="text-center text-gray-700 mb-8 max-w-md">
-                                We'll email you soon with the final price and details. Thank you for your interest in fantasyBox!
+                                {t("success.message")}
                             </p>
+
                             <FantasyButton variant="coffee" onClick={onClose}>
-                                Close
+                                {t("success.close")}
                             </FantasyButton>
                         </div>
                     ) : (
                         <>
-                            <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-gray-200 bg-[var(--fb-cream)]">
-                                <h2 className="fb-heading text-2xl">Request {productType}</h2>
+                            <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-gray-200 bg-[var(--fb-tan)]">
+
+                                <h2 className="fb-heading text-2xl">{t("header.title", { productType: productLabel })}</h2>
+
                                 <button
                                     onClick={onClose}
                                     className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                                    aria-label="Close form"
+                                    aria-label={t("header.closeAriaLabel")}
                                 >
                                     <X className="w-6 h-6" />
                                 </button>
@@ -141,18 +150,19 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                             <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-6 overflow-y-auto">
                                 {/* Shipment Details Section */}
                                 <div>
-                                    <h3 className="fb-heading text-lg mb-4">Shipment Details</h3>
+                                    <h3 className="fb-heading text-lg mb-4">{t("sections.shipmentDetails")}</h3>
+
                                     <div className="space-y-4">
                                         {/* Full Name */}
                                         <div>
                                             <label htmlFor="fullName" className="block text-sm font-medium mb-2">
-                                                Full Name *
+                                                {t("fields.fullName.label")} *
                                             </label>
                                             <input
                                                 id="fullName"
-                                                placeholder="John Doe"
+                                                placeholder={t("fields.fullName.placeholder")}
                                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
-                                                {...register("fullName", { required: "Full name is required" })}
+                                                {...register("fullName", { required: t("fields.fullName.required") })}
                                             />
                                             {errors.fullName && (
                                                 <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>
@@ -162,18 +172,18 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                                         {/* Email */}
                                         <div>
                                             <label htmlFor="email" className="block text-sm font-medium mb-2">
-                                                Email *
+                                                {t("fields.email.label")} *
                                             </label>
                                             <input
                                                 id="email"
                                                 type="email"
-                                                placeholder="john@example.com"
+                                                placeholder={t("fields.email.placeholder")}
                                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
                                                 {...register("email", {
-                                                    required: "Email is required",
+                                                    required: t("fields.email.required"),
                                                     pattern: {
                                                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                                        message: "Invalid email address",
+                                                        message: t("fields.email.invalid"),
                                                     },
                                                 })}
                                             />
@@ -185,13 +195,13 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                                         {/* Shipping Address */}
                                         <div>
                                             <label htmlFor="shippingAddress" className="block text-sm font-medium mb-2">
-                                                Shipping Address *
+                                                {t("fields.shippingAddress.label")} *
                                             </label>
                                             <input
                                                 id="shippingAddress"
-                                                placeholder="123 Main Street"
+                                                placeholder={t("fields.shippingAddress.placeholder")}
                                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
-                                                {...register("shippingAddress", { required: "Shipping address is required" })}
+                                                {...register("shippingAddress", { required: t("fields.shippingAddress.required") })}
                                             />
                                             {errors.shippingAddress && (
                                                 <p className="text-red-500 text-sm mt-1">{errors.shippingAddress.message}</p>
@@ -202,13 +212,13 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                                         <div className="grid grid-cols-2 gap-4">
                                             <div>
                                                 <label htmlFor="city" className="block text-sm font-medium mb-2">
-                                                    City *
+                                                    {t("fields.city.label")} *
                                                 </label>
                                                 <input
                                                     id="city"
-                                                    placeholder="New York"
+                                                    placeholder={t("fields.city.placeholder")}
                                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
-                                                    {...register("city", { required: "City is required" })}
+                                                    {...register("city", { required: t("fields.city.required") })}
                                                 />
                                                 {errors.city && (
                                                     <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>
@@ -217,13 +227,13 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
 
                                             <div>
                                                 <label htmlFor="zipCode" className="block text-sm font-medium mb-2">
-                                                    ZIP Code *
+                                                    {t("fields.zipCode.label")} *
                                                 </label>
                                                 <input
                                                     id="zipCode"
-                                                    placeholder="10001"
+                                                    placeholder={t("fields.zipCode.placeholder")}
                                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
-                                                    {...register("zipCode", { required: "ZIP code is required" })}
+                                                    {...register("zipCode", { required: t("fields.zipCode.required") })}
                                                 />
                                                 {errors.zipCode && (
                                                     <p className="text-red-500 text-sm mt-1">{errors.zipCode.message}</p>
@@ -234,13 +244,13 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                                         {/* Phone Number */}
                                         <div>
                                             <label htmlFor="phoneNumber" className="block text-sm font-medium mb-2">
-                                                Phone Number *
+                                                {t("fields.phoneNumber.label")} *
                                             </label>
                                             <input
                                                 id="phoneNumber"
-                                                placeholder="+1 (555) 000-0000"
+                                                placeholder={t("fields.phoneNumber.placeholder")}
                                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
-                                                {...register("phoneNumber", { required: "Phone number is required" })}
+                                                {...register("phoneNumber", { required: t("fields.phoneNumber.required") })}
                                             />
                                             {errors.phoneNumber && (
                                                 <p className="text-red-500 text-sm mt-1">{errors.phoneNumber.message}</p>
@@ -254,15 +264,15 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                                     <div>
                                         <h3 className="fb-heading text-lg mb-4">Book Selection</h3>
                                         <label htmlFor="bookTitle" className="block text-sm font-medium mb-2">
-                                            Book Title and Author/Link *
+                                            {t("fields.bookTitle.label")} *
                                         </label>
                                         <textarea
                                             id="bookTitle"
-                                            placeholder="e.g., 'The House in the Cerulean Sea by TJ Klune' or link to your wishlist"
+                                            placeholder={t("fields.bookTitle.placeholder")}
                                             rows={3}
                                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
                                             {...register("bookTitle", {
-                                                required: "Book title and author/link is required",
+                                                required: t("fields.bookTitle.required"),
                                             })}
                                         />
                                         {errors.bookTitle && (
@@ -273,39 +283,39 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
 
                                 {isKnittedSleeve && (
                                     <div className="space-y-4">
-                                        <h3 className="fb-heading text-lg mb-4">Reader Type</h3>
+                                        <h3 className="fb-heading text-lg mb-4">{t("sections.readerType")}</h3>
                                         <div className="space-y-3">
                                             <label className="flex items-center gap-3 cursor-pointer">
                                                 <input
                                                     type="radio"
                                                     value="physical"
-                                                    {...register("readerType", { required: "Reader type is required" })}
+                                                    {...register("readerType", { required: t("fields.readerType.required") })}
                                                     className="w-4 h-4"
                                                 />
-                                                <span className="text-sm font-medium">Physical Book</span>
+                                                <span className="text-sm font-medium">{t("fields.readerType.physical")}</span>
                                             </label>
                                             <label className="flex items-center gap-3 cursor-pointer">
                                                 <input
                                                     type="radio"
                                                     value="electronic"
-                                                    {...register("readerType", { required: "Reader type is required" })}
+                                                    {...register("readerType", { required: t("fields.readerType.required") })}
                                                     className="w-4 h-4"
                                                 />
-                                                <span className="text-sm font-medium">Electronic Reader (Kindle/Kobo)</span>
+                                                <span className="text-sm font-medium">{t("fields.readerType.electronic")}</span>
                                             </label>
                                         </div>
 
                                         {readerType === "electronic" && (
                                             <div>
                                                 <label htmlFor="readerModel" className="block text-sm font-medium mb-2">
-                                                    Electronic Reader Model *
+                                                    {t("fields.readerModel.label")} *
                                                 </label>
                                                 <input
                                                     id="readerModel"
-                                                    placeholder="e.g., Kindle Paperwhite 2021"
+                                                    placeholder={t("fields.readerModel.placeholder")}
                                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
                                                     {...register("readerModel", {
-                                                        required: readerType === "electronic" ? "Reader model is required" : false,
+                                                        required: readerType === "electronic" ? t("fields.readerModel.required") : false,
                                                     })}
                                                 />
                                                 {errors.readerModel && (
@@ -318,7 +328,7 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
 
                                 {/* Color Selector */}
                                 <div>
-                                    <h3 className="fb-heading text-lg mb-4">Choose a Color</h3>
+                                    <h3 className="fb-heading text-lg mb-4">{t("sections.chooseColor")}</h3>
                                     <div className="grid grid-cols-5 gap-3">
                                         {COLOR_OPTIONS.map((color) => (
                                             <label
@@ -328,7 +338,7 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
                                                 <input
                                                     type="radio"
                                                     value={color.value}
-                                                    {...register("selectedColor", { required: "Color selection is required" })}
+                                                    {...register("selectedColor", { required: t("fields.selectedColor.required") })}
                                                     className="hidden"
                                                 />
                                                 <div
@@ -352,9 +362,9 @@ export function RequestForm({ productType, onClose }: RequestFormProps) {
 
                                 {/* Doubts/Comments */}
                                 <div>
-                                    <h3 className="fb-heading text-lg mb-4">Doubts or Comments</h3>
+                                    <h3 className="fb-heading text-lg mb-4">{t("sections.doubtsOrComments")}</h3>
                                     <textarea
-                                        placeholder="Tell us anything else you'd like us to know..."
+                                        placeholder={t("fields.doubts.placeholder")}
                                         rows={4}
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600"
                                         {...register("doubts")}

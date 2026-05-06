@@ -1,0 +1,79 @@
+{
+  "success": {
+    "title": "¡Solicitud recibida! 🎉",
+    "message": "Te escribiremos pronto por email con el precio final y los detalles. ¡Gracias por tu interés en fantasyBox!",
+    "close": "Cerrar"
+  },
+  "header": {
+    "title": "Solicitar {{productType}}",
+    "closeAriaLabel": "Cerrar formulario"
+  },
+  "sections": {
+    "shipmentDetails": "Datos de envío",
+    "bookSelection": "Selección del libro",
+    "readerType": "Tipo de lector",
+    "chooseColor": "Elige un color",
+    "doubtsOrComments": "Dudas o comentarios"
+  },
+  "fields": {
+    "fullName": {
+      "label": "Nombre completo ",
+      "placeholder": "John Doe",
+      "required": "El nombre completo es obligatorio"
+    },
+    "email": {
+      "label": "Email ",
+      "placeholder": "john@example.com",
+      "required": "El email es obligatorio",
+      "invalid": "El email no es válido"
+    },
+    "shippingAddress": {
+      "label": "Dirección de envío ",
+      "placeholder": "123 Main Street, Apartamento 4B",
+      "required": "La dirección de envío es obligatoria"
+    },
+    "city": {
+      "label": "Ciudad ",
+      "placeholder": "New York",
+      "required": "La ciudad es obligatoria"
+    },
+    "zipCode": {
+      "label": "Código postal *",
+      "placeholder": "10001",
+      "required": "El código postal es obligatorio"
+    },
+    "phoneNumber": {
+      "label": "Número de teléfono ",
+      "placeholder": "+34 555 000 000",
+      "required": "El número de teléfono es obligatorio"
+    },
+    "bookTitle": {
+      "label": "Título del libro y autor/enlace ",
+      "placeholder": "Ej.: 'The House in the Cerulean Sea de TJ Klune' o enlace",
+      "required": "El título del libro y autor/enlace es obligatorio"
+    },
+    "readerType": {
+      "required": "El tipo de lector es obligatorio",
+      "physical": "Libro físico",
+      "electronic": "Lector electrónico (Kindle/Kobo)"
+    },
+    "readerModel": {
+      "label": "Modelo del lector electrónico ",
+      "placeholder": "Ej.: Kindle Paperwhite 2021",
+      "required": "El modelo del lector es obligatorio"
+    },
+    "selectedColor": {
+      "required": "La selección de color es obligatoria"
+    },
+    "doubts": {
+      "placeholder": "Cuéntanos cualquier cosa adicional que quieras que sepamos..."
+    }
+  },
+  "errors": {
+    "submit": "No se pudo enviar tu solicitud. Inténtalo de nuevo."
+  },
+  "actions": {
+    "sending": "Enviando...",
+    "submit": "Enviar solicitud"
+  }
+}

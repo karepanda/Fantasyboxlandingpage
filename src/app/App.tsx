@@ -8,6 +8,7 @@ import {
   ProductsSection,
   WhatsInsideSection,
 } from "./components/landing";
+import { Header } from "./components/Header";
 
 export default function App() {
   const scrollToForm = () => {
@@ -16,6 +17,7 @@ export default function App() {
 
   return (
     <div className="fantasy-page">
+      <Header />
       <HeroSection />
 
       <HowItWorksSection />

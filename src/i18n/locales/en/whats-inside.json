@@ -1,0 +1,15 @@
+{
+  "title": "What's Inside Your FantasyBox",
+  "subtitle": "Every box contains carefully curated items to enhance your reading ritual",
+  "items": {
+    "book": "Book chosen by you",
+    "bookmark": "Handmade bookmark",
+    "flags": "Index flags",
+    "notes": "Transparent sticky notes",
+    "pen": "Special pen",
+    "postcard": "Quote postcard",
+    "extras": "Thematic extras",
+    "packaging": "Careful packaging"
+  }
+}
+

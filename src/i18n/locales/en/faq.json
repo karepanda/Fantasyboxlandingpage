@@ -1,0 +1,22 @@
+{
+  "title": "Frequently Asked Questions",
+  "questions": {
+    "one": {
+      "q": "Is FantasyBox a subscription?",
+      "a": "No, you buy only when you want. There is no recurring subscription."
+    },
+    "two": {
+      "q": "Can I choose the book?",
+      "a": "Yes! You choose the book you want, and we build the perfect cozy experience around it."
+    },
+    "three": {
+      "q": "Why do I need to fill out a form?",
+      "a": "The final price depends on your chosen book and shipping destination. We calculate a personalized price for you."
+    },
+    "four": {
+      "q": "Can I buy it as a gift?",
+      "a": "Absolutely! FantasyBox is designed to be the perfect gift for book lovers."
+    }
+  }
+}
+

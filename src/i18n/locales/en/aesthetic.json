@@ -1,0 +1,12 @@
+{
+  "title": "Choose Your Aesthetic",
+  "subtitle": "Select the mood that matches your reading style",
+  "aesthetics": {
+    "cozyBeige": "Cozy Beige",
+    "darkAcademy": "Dark Academy",
+    "vintageCoffee": "Vintage Coffee",
+    "softCream": "Soft Cream",
+    "oldLibrary": "Old Library"
+  }
+}
+
