@@ -48,9 +48,6 @@ export function ProductCard({
                 </p>
 
                 <div className="mb-4">
-                    <p className="mb-2 text-sm opacity-70">
-                        {t(includes)}
-                    </p>
 
                     <ul className="space-y-1">
                         {includes.map((item) => (

@@ -12,6 +12,10 @@
     "three": {
       "title": "Obtén tu precio",
       "desc": "Completa el formulario para recibir el precio final con envío"
+    },
+    "four": {
+      "title": "Preparación",
+      "desc": "Por favor, permita de 10 a 15 días para su envio"
     }
   }
 }

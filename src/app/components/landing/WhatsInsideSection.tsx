@@ -11,7 +11,7 @@ export function WhatsInsideSection() {
         { icon: Heart, textKey: "items.flags" },
         { icon: Package, textKey: "items.notes" },
         { icon: BookOpen, textKey: "items.pen" },
-        { icon: Heart, textKey: "items.postcard" },
+        { icon: Heart, textKey: "items.bookSleeve" },
         { icon: Sparkles, textKey: "items.extras" },
         { icon: Package, textKey: "items.packaging" },
     ];

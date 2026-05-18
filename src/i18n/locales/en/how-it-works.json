@@ -12,6 +12,10 @@
     "three": {
       "title": "Get your price",
       "desc": "Fill out the form to receive the final price with shipping"
+    },
+    "four": {
+      "title": "Preparation",
+      "desc": "Please allow 10–15 days for shipping"
     }
   }
 }

@@ -38,7 +38,7 @@ export const products = [
       "classicBox.includes.indexFlags",
       "classicBox.includes.stickyNotes",
       "classicBox.includes.pen",
-      "classicBox.includes.postcard",
+      "classicBox.includes.bookSleeve",
     ],
     img: img2,
     footerNote: "footerNote",
@@ -49,8 +49,8 @@ export const products = [
     desc: "cozyBox.desc",
     includes: [
       "cozyBox.includes.everything",
-      "cozyBox.includes.sleeve",
       "cozyBox.includes.candle",
+      "cozyBox.includes.journal",
       "cozyBox.includes.stationery",
     ],
     img: img3,

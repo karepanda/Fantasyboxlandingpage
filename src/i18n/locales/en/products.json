@@ -13,16 +13,16 @@
       "indexFlags": "Index flags",
       "stickyNotes": "Sticky notes",
       "pen": "Special pen",
-      "postcard": "Quote postcard"
+      "bookSleeve": "Crocheted book sleeve"
     }
   },
   "cozyBox": {
     "name": "Cozy FantasyBox",
     "desc": "Enhanced comfort with extra warmth and aesthetic touches",
     "includes": {
-      "everything": "Everything in Classic",
-      "sleeve": "Knitted book sleeve",
+      "everything": "Everything of Classic",
       "candle": "Thematic candle",
+      "journal": "Reading journal",
       "stationery": "Extra stationery"
     }
   },

@@ -13,7 +13,7 @@
       "indexFlags": "Banderas índice",
       "stickyNotes": "Notas adhesivas",
       "pen": "Bolígrafo especial",
-      "postcard": "Postal de cita"
+      "bookSleeve": "Funda para libro tejida a crochet"
     }
   },
   "cozyBox": {
@@ -21,8 +21,8 @@
     "desc": "Comodidad mejorada con calidez extra y toques estéticos",
     "includes": {
       "everything": "Todo lo del Clásico",
-      "sleeve": "Funda tejida para libros",
       "candle": "Vela temática",
+      "journal": "Diario de lectura",
       "stationery": "Papelería extra"
     }
   },

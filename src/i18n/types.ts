@@ -32,7 +32,7 @@ export interface ProductsTranslations {
       indexFlags: string;
       stickyNotes: string;
       pen: string;
-      postcard: string;
+      bookSleeve: string;
     };
   };
   cozyBox: {
@@ -40,8 +40,8 @@ export interface ProductsTranslations {
     desc: string;
     includes: {
       everything: string;
-      sleeve: string;
       candle: string;
+      journal: string;
       stationery: string;
     };
   };
@@ -94,6 +94,10 @@ export interface HowItWorksTranslations {
       title: string;
       desc: string;
     };
+    four: {
+      title: string;
+      desc: string;
+    }
   };
 }
 
@@ -106,7 +110,7 @@ export interface WhatsInsideTranslations {
     flags: string;
     notes: string;
     pen: string;
-    postcard: string;
+    bookSleeve: string;
     extras: string;
     packaging: string;
   };
