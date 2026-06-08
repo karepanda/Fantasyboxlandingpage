@@ -135,6 +135,7 @@ When extending styles, use these variables to maintain consistency.
 - **Spanish:** `es`
 
 ### File Structure
+```
 src/i18n/
 ├── config.ts              # i18next configuration
 ├── types.ts               # TypeScript interfaces for all namespaces
@@ -152,6 +153,7 @@ src/i18n/
 │   └── header.json
 └── es/                # Spanish translations (mirrored structure)
 └── ...
+```
 
 ### Workflow for Adding/Modifying Text
 **MANDATORY STEPS:**
