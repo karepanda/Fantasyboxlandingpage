@@ -1,32 +1,14 @@
-import { BookOpen, Package, CheckCircle } from "lucide-react";
+
 
 import img2 from "../../imports/classicFantasyBoxOrange.jpg";
 import img3 from "../../imports/cozyFantasyBoxBlue.jpg";
 import img4 from "../../imports/bookmarksSet.jpg";
 import img5 from "../../imports/bookSleeve.jpg";
-import img6 from "../../imports/cozy beige.jpg";
-import img7 from "../../imports/dark academia.jpg";
-import img8 from "../../imports/vintage coffee.jpg";
-import img9 from "../../imports/soft cream.jpg";
-import img10 from "../../imports/Old.jpg";
+import sleevePinkWhite from "../../imports/bookSleeve rosa.jpg";
+import sleeveRedWhite from "../../imports/bookSleeve roja.jpg";
+import coverPinkGreen from "../../imports/BookCover RVB.jpg";
+import sleeveKindle from "../../imports/funda kindle VMB.jpg";
 
-export const steps = [
-  {
-    icon: BookOpen,
-    title: "Choose your book",
-    desc: "Tell us which book you want to read next",
-  },
-  {
-    icon: Package,
-    title: "Pick your box style",
-    desc: "Select from our curated box options and add extras",
-  },
-  {
-    icon: CheckCircle,
-    title: "Get your price",
-    desc: "Fill out the form to receive the final price with shipping",
-  },
-];
 
 export const products = [
   {
@@ -83,30 +65,46 @@ export const products = [
   },
 ];
 
-export const aesthetics = [
+export interface FinishedProduct {
+  name: string;
+  productType: string;
+  price: string;
+  colorName: string;
+  colorValue: string;
+  img: string;
+}
+
+export const finishedProducts: FinishedProduct[] = [
   {
-    name: "Cozy Beige",
-    color: "#F9DBBD",
-    img: img6,
+    name: "finishedProducts.PinkAndWhite.name",
+    productType: "finishedProducts.PinkAndWhite.productType",
+    price: "finishedProducts.PinkAndWhite.price",
+    colorName: "finishedProducts.PinkAndWhite.colorName",
+    colorValue: "#8A4D7D",
+    img: sleevePinkWhite,
   },
   {
-    name: "Dark Academy",
-    color: "#432818",
-    img: img7,
+    name: "finishedProducts.sleeveRedWhite.name",
+    productType: "finishedProducts.sleeveRedWhite.productType",
+    price: "finishedProducts.sleeveRedWhite.price",
+    colorName: "finishedProducts.sleeveRedWhite.colorName",
+    colorValue: "#4F6F52",
+    img: sleeveRedWhite,
   },
   {
-    name: "Vintage Coffee",
-    color: "#99582A",
-    img: img8,
+    name: "finishedProducts.PinkGreenCover.name",
+    productType: "finishedProducts.PinkGreenCover.productType",
+    price: "finishedProducts.PinkGreenCover.price",
+    colorName: "finishedProducts.PinkGreenCover.colorName",
+    colorValue: "#6B3FA0",
+    img: coverPinkGreen,
   },
   {
-    name: "Soft Cream",
-    color: "#FDF0D5",
-    img: img9,
-  },
-  {
-    name: "Old Library",
-    color: "#7F4F24",
-    img: img10,
+    name: "finishedProducts.kindleVmb.name",
+    productType: "finishedProducts.kindleVmb.productType",
+    price: "finishedProducts.kindleVmb.price",
+    colorName: "finishedProducts.kindleVmb.colorName",
+    colorValue: "#7D6A9B",
+    img: sleeveKindle,
   },
 ];

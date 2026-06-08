@@ -1,5 +1,6 @@
 
 // Type-safe namespace declarations
+
 export interface CommonTranslations {
   language: string;
   buttonExplore: string;
@@ -70,12 +71,32 @@ export interface ProductsTranslations {
 export interface AestheticTranslations {
   title: string;
   subtitle: string;
-  aesthetics: {
-    cozyBeige: string;
-    darkAcademy: string;
-    vintageCoffee: string;
-    softCream: string;
-    oldLibrary: string;
+  finishedProducts: {
+    orderButton: string;
+    PinkAndWhite: {
+      name: string;
+      productType: string;
+      price: string;
+      colorName: string;
+    };
+    sleeveRedWhite: {
+      name: string;
+      productType: string;
+      price: string;
+      colorName: string;
+    };
+    PinkGreenCover: {
+      name: string;
+      productType: string;
+      price: string;
+      colorName: string;
+    };
+    kindleVmb: {
+      name: string;
+      productType: string;
+      price: string;
+      colorName: string;
+    };
   };
 }
 

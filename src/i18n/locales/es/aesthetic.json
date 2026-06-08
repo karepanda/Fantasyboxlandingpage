@@ -1,12 +1,32 @@
 {
-  "title": "Inspirate",
-  "subtitle": "El ambiente es lo mas importante para una buena lectura, mira el que mas se adapte a tu estilo",
-  "aesthetics": {
-    "cozyBeige": "Beige Acogedor",
-    "darkAcademy": "Academia Oscura",
-    "vintageCoffee": "Café Vintage",
-    "softCream": "Crema Suave",
-    "oldLibrary": "Biblioteca Antigua"
+  "title": "Productos terminados",
+  "subtitle": "Elige una funda de libro ya hecha y pídela con el mismo acabado que ves en la foto.",
+  "finishedProducts": {
+    "orderButton": "Pedir esta funda",
+    "PinkAndWhite": {
+      "name": "Funda frambuesa",
+      "productType": "Funda tejida - Frambuesa",
+      "price": "16 EUR",
+      "colorName": "Rosa y blanco"
+    },
+    "sleeveRedWhite": {
+      "name": "Funda Roja y blanco",
+      "productType": "Funda tejida - Roja y blanco",
+      "price": "16 EUR",
+      "colorName": "Roja y blanco"
+    },
+    "PinkGreenCover": {
+      "name": "Funda morada para libro",
+      "productType": "Funda tejida - Funda morada para libro",
+      "price": "18 EUR",
+      "colorName": "Morado"
+    },
+    "kindleVmb": {
+      "name": "Funda Kindle violeta, menta y beige",
+      "productType": "Funda tejida - Kindle violeta, menta y beige",
+      "price": "16 EUR",
+      "colorName": "Violeta, menta y beige"
+    }
   }
 }
 
