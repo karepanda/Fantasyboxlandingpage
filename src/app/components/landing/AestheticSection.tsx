@@ -32,7 +32,7 @@ export function AestheticSection() {
                         return (
                         <div
                             key={product.name}
-                            className="overflow-hidden rounded-xl shadow"
+                            className="flex h-full flex-col overflow-hidden rounded-xl shadow"
                             style={{ backgroundColor: "var(--fb-tan)" }}
                         >
                             <div className="relative aspect-square">
@@ -46,7 +46,7 @@ export function AestheticSection() {
                                 </div>
                             </div>
 
-                            <div className="space-y-3 p-4 text-center">
+                            <div className="flex flex-grow flex-col justify-between gap-3 p-4 text-center">
                                 <p className="text-sm font-medium text-[var(--fb-text)]">
                                     {productName}
                                 </p>
