@@ -8,6 +8,8 @@ import {useTranslation} from "react-i18next";
 interface RequestFormProps {
     productType: string;
     productLabel: string;
+    initialSelectedColor?: ColorOption;
+    hideColorSelector?: boolean;
     onClose: () => void;
 }
 
@@ -25,7 +27,12 @@ interface FormData {
     readerModel?: string;
 }
 
-const COLOR_OPTIONS = [
+interface ColorOption {
+    name: string;
+    value: string;
+}
+
+const COLOR_OPTIONS: ColorOption[] = [
     { name: "Black", value: "#000000" },
     { name: "Gray", value: "#808080" },
     { name: "Brown", value: "#99582A" },
@@ -38,12 +45,21 @@ const COLOR_OPTIONS = [
     { name: "Pink", value: "#EC4899" },
 ];
 
-export function RequestForm({ productType, productLabel, onClose }: RequestFormProps) {
+export function RequestForm({
+                                productType,
+                                productLabel,
+                                initialSelectedColor,
+                                hideColorSelector = false,
+                                onClose,
+                            }: RequestFormProps) {
     const { t } = useTranslation("requestForm");
+    const colorOptions = initialSelectedColor
+        ? [...COLOR_OPTIONS, initialSelectedColor]
+        : COLOR_OPTIONS;
 
     const { register, handleSubmit, formState: { errors }, watch } = useForm<FormData>({
         defaultValues: {
-            selectedColor: COLOR_OPTIONS[0].value,
+            selectedColor: initialSelectedColor?.value ?? COLOR_OPTIONS[0].value,
             readerType: "physical",
         },
     });
@@ -61,7 +77,7 @@ export function RequestForm({ productType, productLabel, onClose }: RequestFormP
 
         try {
             // Find the color name from COLOR_OPTIONS
-            const colorName = COLOR_OPTIONS.find((color) => color.value === data.selectedColor)?.name || "";
+            const colorName = colorOptions.find((color) => color.value === data.selectedColor)?.name || "";
 
             // Build the payload for Google Apps Script
             const payload: Record<string, string | undefined> = {
@@ -105,7 +121,7 @@ export function RequestForm({ productType, productLabel, onClose }: RequestFormP
             setIsSuccess(true);
         } catch (error) {
             console.error("Form submission error:", error);
-            setSubmitError("Failed to send your request. Please try again.");
+            setSubmitError(t("errors.submit"));
             setIsSubmitting(false);
         }
     };
@@ -262,7 +278,7 @@ export function RequestForm({ productType, productLabel, onClose }: RequestFormP
                                 {/* Product-Specific Fields */}
                                 {isFantasyBox && (
                                     <div>
-                                        <h3 className="fb-heading text-lg mb-4">Book Selection</h3>
+                                        <h3 className="fb-heading text-lg mb-4">{t("sections.bookSelection")}</h3>
                                         <label htmlFor="bookTitle" className="block text-sm font-medium mb-2">
                                             {t("fields.bookTitle.label")} *
                                         </label>
@@ -327,38 +343,46 @@ export function RequestForm({ productType, productLabel, onClose }: RequestFormP
                                 )}
 
                                 {/* Color Selector */}
-                                <div>
-                                    <h3 className="fb-heading text-lg mb-4">{t("sections.chooseColor")}</h3>
-                                    <div className="grid grid-cols-5 gap-3">
-                                        {COLOR_OPTIONS.map((color) => (
-                                            <label
-                                                key={color.value}
-                                                className="flex flex-col items-center gap-2 cursor-pointer group"
-                                            >
-                                                <input
-                                                    type="radio"
-                                                    value={color.value}
-                                                    {...register("selectedColor", { required: t("fields.selectedColor.required") })}
-                                                    className="hidden"
-                                                />
-                                                <div
-                                                    className={`w-12 h-12 rounded-lg border-2 transition-all ${
-                                                        selectedColor === color.value
-                                                            ? "border-amber-900 scale-110 ring-2 ring-amber-300"
-                                                            : "border-gray-300 group-hover:border-amber-600"
-                                                    }`}
-                                                    style={{ backgroundColor: color.value }}
-                                                />
-                                                <span className="text-xs text-center font-medium text-gray-700">
-                                                    {color.name}
-                                                </span>
-                                            </label>
-                                        ))}
+                                {hideColorSelector ? (
+                                    <input
+                                        type="hidden"
+                                        value={initialSelectedColor?.value ?? COLOR_OPTIONS[0].value}
+                                        {...register("selectedColor", { required: t("fields.selectedColor.required") })}
+                                    />
+                                ) : (
+                                    <div>
+                                        <h3 className="fb-heading text-lg mb-4">{t("sections.chooseColor")}</h3>
+                                        <div className="grid grid-cols-5 gap-3">
+                                            {COLOR_OPTIONS.map((color) => (
+                                                <label
+                                                    key={color.value}
+                                                    className="flex flex-col items-center gap-2 cursor-pointer group"
+                                                >
+                                                    <input
+                                                        type="radio"
+                                                        value={color.value}
+                                                        {...register("selectedColor", { required: t("fields.selectedColor.required") })}
+                                                        className="hidden"
+                                                    />
+                                                    <div
+                                                        className={`w-12 h-12 rounded-lg border-2 transition-all ${
+                                                            selectedColor === color.value
+                                                                ? "border-amber-900 scale-110 ring-2 ring-amber-300"
+                                                                : "border-gray-300 group-hover:border-amber-600"
+                                                        }`}
+                                                        style={{ backgroundColor: color.value }}
+                                                    />
+                                                    <span className="text-xs text-center font-medium text-gray-700">
+                                                        {color.name}
+                                                    </span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                        {errors.selectedColor && (
+                                            <p className="text-red-500 text-sm mt-2">{errors.selectedColor.message}</p>
+                                        )}
                                     </div>
-                                    {errors.selectedColor && (
-                                        <p className="text-red-500 text-sm mt-2">{errors.selectedColor.message}</p>
-                                    )}
-                                </div>
+                                )}
 
                                 {/* Doubts/Comments */}
                                 <div>
@@ -385,7 +409,7 @@ export function RequestForm({ productType, productLabel, onClose }: RequestFormP
                                         type="submit"
                                         disabled={isSubmitting}
                                     >
-                                        {isSubmitting ? "Sending..." : "Submit Request"}
+                                        {isSubmitting ? t("actions.sending") : t("actions.submit")}
                                     </FantasyButton>
                                 </div>
                             </form>

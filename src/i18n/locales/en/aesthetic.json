@@ -1,12 +1,31 @@
 {
-  "title": "Get Inspired",
-  "subtitle": "The ambiance is the most important for a good reading experience, look at the one that best suits your style",
-  "aesthetics": {
-    "cozyBeige": "Cozy Beige",
-    "darkAcademy": "Dark Academy",
-    "vintageCoffee": "Vintage Coffee",
-    "softCream": "Soft Cream",
-    "oldLibrary": "Old Library"
+  "title": "Finished Products",
+  "subtitle": "Choose a ready-made book sleeve and order it with the exact look shown.",
+  "finishedProducts": {
+    "orderButton": "Order this sleeve",
+    "BlackAndWhite": {
+      "name": "Gray scale",
+      "productType": "Knitted Sleeve - Gray scale",
+      "price": "16 EUR",
+      "colorName": "gray, black and white"
+    },
+    "sleeveRedWhite": {
+      "name": "Red Book Sleeve",
+      "productType": "Knitted Sleeve - Red and White",
+      "price": "16 EUR",
+      "colorName": "Brown, Green & Natural"
+    },
+    "PinkGreenCover": {
+      "name": "Purple Book Cover Sleeve",
+      "productType": "Knitted Sleeve - Purple Book Cover",
+      "price": "18 EUR",
+      "colorName": "Purple Book Cover"
+    },
+    "kindleVmb": {
+      "name": "Violet, Mint & Beige Kindle Sleeve",
+      "productType": "Knitted Sleeve - Violet, Mint & Beige Kindle",
+      "price": "16 EUR",
+      "colorName": "Violet, Mint & Beige"
+    }
   }
 }
-
