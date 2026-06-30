@@ -3,11 +3,11 @@
   "subtitle": "Elige una funda de libro ya hecha y pídela con el mismo acabado que ves en la foto.",
   "finishedProducts": {
     "orderButton": "Pedir esta funda",
-    "PinkAndWhite": {
-      "name": "Funda frambuesa",
-      "productType": "Funda tejida - Frambuesa",
+    "BlackAndWhite": {
+      "name": "Escala de grises",
+      "productType": "Funda tejida - Escala de grises",
       "price": "16 EUR",
-      "colorName": "Rosa y blanco"
+      "colorName": "gris, negro y blanco"
     },
     "sleeveRedWhite": {
       "name": "Funda Roja y blanco",
@@ -29,4 +29,3 @@
     }
   }
 }
-

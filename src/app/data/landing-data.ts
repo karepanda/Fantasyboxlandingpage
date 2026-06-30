@@ -4,7 +4,7 @@ import img2 from "../../imports/classicFantasyBoxOrange.jpg";
 import img3 from "../../imports/cozyFantasyBoxBlue.jpg";
 import img4 from "../../imports/bookmarksSet.jpg";
 import img5 from "../../imports/bookSleeve.jpg";
-import sleevePinkWhite from "../../imports/bookSleeve rosa.jpg";
+import sleeveBlackWhite from "../../imports/fundas Pequenas VMB-BGN.jpg";
 import sleeveRedWhite from "../../imports/bookSleeve roja.jpg";
 import coverPinkGreen from "../../imports/BookCover RVB.jpg";
 import sleeveKindle from "../../imports/funda kindle VMB.jpg";
@@ -76,12 +76,12 @@ export interface FinishedProduct {
 
 export const finishedProducts: FinishedProduct[] = [
   {
-    name: "finishedProducts.PinkAndWhite.name",
-    productType: "finishedProducts.PinkAndWhite.productType",
-    price: "finishedProducts.PinkAndWhite.price",
-    colorName: "finishedProducts.PinkAndWhite.colorName",
-    colorValue: "#8A4D7D",
-    img: sleevePinkWhite,
+    name: "finishedProducts.BlackAndWhite.name",
+    productType: "finishedProducts.BlackAndWhite.productType",
+    price: "finishedProducts.BlackAndWhite.price",
+    colorName: "finishedProducts.BlackAndWhite.colorName",
+    colorValue: "#7D7D7D",
+    img: sleeveBlackWhite,
   },
   {
     name: "finishedProducts.sleeveRedWhite.name",

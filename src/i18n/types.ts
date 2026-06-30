@@ -73,7 +73,7 @@ export interface AestheticTranslations {
   subtitle: string;
   finishedProducts: {
     orderButton: string;
-    PinkAndWhite: {
+    BlackAndWhite: {
       name: string;
       productType: string;
       price: string;
@@ -272,8 +272,8 @@ export interface Resources {
 }
 
 // Declare module to enable type-safe useTranslation hook
-declare module 'i18next' {
-  interface i18n {
-    t(key: string, defaultValue?: string, options?: any): string;
-  }
-}
+//declare module 'i18next' {
+  //interface i18n {
+    //t(key: string, defaultValue?: string, options?: any): string;
+  //}
+//}

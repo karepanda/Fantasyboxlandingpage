@@ -3,11 +3,11 @@
   "subtitle": "Choose a ready-made book sleeve and order it with the exact look shown.",
   "finishedProducts": {
     "orderButton": "Order this sleeve",
-    "PinkAndWhite": {
-      "name": "Raspberry",
-      "productType": "Knitted Sleeve - Raspberry",
+    "BlackAndWhite": {
+      "name": "Gray scale",
+      "productType": "Knitted Sleeve - Gray scale",
       "price": "16 EUR",
-      "colorName": "Pink and white"
+      "colorName": "gray, black and white"
     },
     "sleeveRedWhite": {
       "name": "Red Book Sleeve",
@@ -29,4 +29,3 @@
     }
   }
 }
-
