@@ -25,6 +25,7 @@ export interface ProductsTranslations {
   classicBox: {
     name: string;
     desc: string;
+    price: string;
     footerNote: string;
     buttonText: string;
     includes: {
@@ -39,6 +40,7 @@ export interface ProductsTranslations {
   cozyBox: {
     name: string;
     desc: string;
+    price: string;
     includes: {
       everything: string;
       candle: string;
@@ -49,6 +51,7 @@ export interface ProductsTranslations {
   bookmarks: {
     name: string;
     desc: string;
+    price: string;
     includes: {
       collection: string;
       styles: string;
@@ -58,6 +61,7 @@ export interface ProductsTranslations {
   sleeve: {
     name: string;
     desc: string;
+    price: string;
     includes: {
       fit: string;
       material: string;
