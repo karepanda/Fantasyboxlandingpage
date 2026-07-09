@@ -7,6 +7,7 @@ import {useTranslation} from "react-i18next";
 interface ProductCardProps {
     name: string;
     desc: string;
+    price?: string;
     includes: string[];
     img: string;
     onRequestBox: () => void;
@@ -17,6 +18,7 @@ interface ProductCardProps {
 export function ProductCard({
                                 name,
                                 desc,
+                                price,
                                 includes,
                                 img,
                                 footerNote = "footerNote",
@@ -32,6 +34,11 @@ export function ProductCard({
         <div className="fb-card">
             {/* Image with hover overlay */}
             <div className="group relative cursor-pointer" onClick={() => setIsZoomed(true)}>
+                {price && (
+                    <div className="absolute right-3 top-3 z-10 rounded-full bg-[var(--fb-cream)] px-3 py-1 text-sm font-semibold text-[var(--fb-dark)] shadow">
+                        {t(price)}
+                    </div>
+                )}
                 <img src={img} alt={translatedName} className="h-64 w-full object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                     <p className="text-white text-center text-lg font-medium">View image</p>

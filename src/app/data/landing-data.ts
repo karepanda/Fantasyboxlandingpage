@@ -14,6 +14,7 @@ export const products = [
   {
     name: "classicBox.name",
     desc: "classicBox.desc",
+    price: "classicBox.price",
     includes: [
       "classicBox.includes.book",
       "classicBox.includes.bookmark",
@@ -29,6 +30,7 @@ export const products = [
   {
     name: "cozyBox.name",
     desc: "cozyBox.desc",
+    price: "cozyBox.price",
     includes: [
       "cozyBox.includes.everything",
       "cozyBox.includes.candle",
@@ -42,6 +44,7 @@ export const products = [
   {
     name: "bookmarks.name",
     desc: "bookmarks.desc",
+    price: "bookmarks.price",
     includes: [
       "bookmarks.includes.collection",
       "bookmarks.includes.styles",
@@ -54,6 +57,7 @@ export const products = [
   {
     name: "sleeve.name",
     desc: "sleeve.desc",
+    price: "sleeve.price",
     includes: [
       "sleeve.includes.fit",
       "sleeve.includes.material",

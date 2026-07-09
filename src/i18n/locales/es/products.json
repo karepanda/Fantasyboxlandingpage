@@ -7,6 +7,7 @@
   "classicBox": {
     "name": "FantasyBox Clásico",
     "desc": "La experiencia de lectura esencial con todos los detalles acogedores",
+    "price": "24,30 €",
     "includes": {
       "book": "Tu libro elegido",
       "bookmark": "Marcapáginas",
@@ -19,6 +20,7 @@
   "cozyBox": {
     "name": "FantasyBox Acogedor",
     "desc": "Comodidad mejorada con calidez extra y toques estéticos",
+    "price": "32,00 €",
     "includes": {
       "everything": "Todo lo del Clásico",
       "candle": "Vela temática",
@@ -29,6 +31,7 @@
   "bookmarks": {
     "name": "Set de Marcapáginas",
     "desc": "Colección curada de marcapáginas hechos a mano",
+    "price": "7,50 €",
     "includes": {
       "collection": "3 marcapáginas únicos",
       "styles": "Varios estilos y materiales",
@@ -38,6 +41,7 @@
   "sleeve": {
     "name": "Funda Tejida",
     "desc": "Funda hecha a mano para tu libro o e-reader",
+    "price": "20,00 €",
     "includes": {
       "fit": "Ajuste personalizado",
       "material": "Material tejido acogedor",
