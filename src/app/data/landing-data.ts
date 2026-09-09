@@ -2,7 +2,7 @@
 
 import img2 from "../../imports/classicFantasyBoxOrange.jpg";
 import img3 from "../../imports/cozyFantasyBoxBlue.jpg";
-import img4 from "../../imports/bookmarksSet.jpg";
+import img4 from "../../imports/set front.jpg";
 import img5 from "../../imports/bookSleeve.jpg";
 import sleeveBlackWhite from "../../imports/fundas Pequenas VMB-BGN.jpg";
 import sleeveRedWhite from "../../imports/bookSleeve roja.jpg";
@@ -43,6 +43,8 @@ export const products = [
   },
   {
     name: "bookmarks.name",
+    // Keep the Google Apps Script routing value independent of the display title.
+    productType: "BookMarks",
     desc: "bookmarks.desc",
     price: "bookmarks.price",
     includes: [
@@ -51,8 +53,8 @@ export const products = [
       "bookmarks.includes.packaging",
     ],
     img: img4,
-    footerNote: "footerNote",
-    buttonText: "buttonText",
+    footerNote: "bookmarks.footerNote",
+    buttonText: "bookmarks.buttonText",
   },
   {
     name: "sleeve.name",
@@ -65,7 +67,7 @@ export const products = [
     ],
     img: img5,
     footerNote: "footerNote",
-    buttonText: "buttonText",
+    buttonText: "sleeve.buttonText",
   },
 ];
 

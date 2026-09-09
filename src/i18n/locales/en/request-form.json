@@ -13,6 +13,7 @@
     "bookSelection": "Book Selection",
     "readerType": "Reader Type",
     "chooseColor": "Choose a Color",
+    "chooseCollection": "Choose your collection",
     "doubtsOrComments": "Doubts or Comments"
   },
   "fields": {
@@ -64,6 +65,11 @@
     },
     "selectedColor": {
       "required": "Color selection is required"
+    },
+    "collection": {
+      "halloween": "Halloween set",
+      "autumn": "Autumn set",
+      "required": "Please choose a collection"
     },
     "doubts": {
       "placeholder": "Tell us anything else you'd like us to know..."

@@ -6,6 +6,7 @@ import {useTranslation} from "react-i18next";
 
 interface ProductCardProps {
     name: string;
+    productType?: string;
     desc: string;
     price?: string;
     includes: string[];
@@ -17,6 +18,7 @@ interface ProductCardProps {
 
 export function ProductCard({
                                 name,
+                                productType,
                                 desc,
                                 price,
                                 includes,
@@ -95,7 +97,7 @@ export function ProductCard({
             {/* Request Form Modal */}
             {isFormOpen && (
                 <RequestForm
-                    productType={t(name, { lng: "en" })}
+                    productType={productType ?? t(name, { lng: "en" })}
                     productLabel={translatedName}
                     onClose={() => setIsFormOpen(false)}
                 />

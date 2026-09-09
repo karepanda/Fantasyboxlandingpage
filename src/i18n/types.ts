@@ -49,9 +49,11 @@ export interface ProductsTranslations {
     };
   };
   bookmarks: {
+    buttonText: string;
     name: string;
     desc: string;
     price: string;
+    footerNote: string;
     includes: {
       collection: string;
       styles: string;
@@ -59,6 +61,7 @@ export interface ProductsTranslations {
     };
   };
   sleeve: {
+    buttonText: string;
     name: string;
     desc: string;
     price: string;
@@ -196,6 +199,7 @@ export interface RequestFormTranslations {
     bookSelection: string;
     readerType: string;
     chooseColor: string;
+    chooseCollection: string;
     doubtsOrComments: string;
   };
   fields: {
@@ -246,6 +250,11 @@ export interface RequestFormTranslations {
       required: string;
     };
     selectedColor: {
+      required: string;
+    };
+    collection: {
+      halloween: string;
+      autumn: string;
       required: string;
     };
     doubts: {

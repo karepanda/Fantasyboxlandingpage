@@ -13,6 +13,7 @@
     "bookSelection": "Selección del libro",
     "readerType": "Tipo de lector",
     "chooseColor": "Elige un color",
+    "chooseCollection": "Elige tu colección",
     "doubtsOrComments": "Dudas o comentarios"
   },
   "fields": {
@@ -64,6 +65,11 @@
     },
     "selectedColor": {
       "required": "La selección de color es obligatoria"
+    },
+    "collection": {
+      "halloween": "Set Halloween",
+      "autumn": "Set Otoño",
+      "required": "Elige una colección"
     },
     "doubts": {
       "placeholder": "Cuéntanos cualquier cosa adicional que quieras que sepamos..."

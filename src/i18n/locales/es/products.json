@@ -29,16 +29,19 @@
     }
   },
   "bookmarks": {
-    "name": "Set de Marcapáginas",
-    "desc": "Colección curada de marcapáginas hechos a mano",
+    "buttonText": "Solicitar marcapáginas",
+    "name": "Set de marcapáginas",
+    "desc": "Colección de marcapáginas laminados",
     "price": "7,50 €",
+    "footerNote": "El precio final depende del envío",
     "includes": {
-      "collection": "3 marcapáginas únicos",
-      "styles": "Varios estilos y materiales",
-      "packaging": "Empaque listo para regalo"
+      "collection": "4 marcapáginas únicos",
+      "styles": "Elige el set que quieras",
+      "packaging": "Disponible en Vinted"
     }
   },
   "sleeve": {
+    "buttonText": "Solicitar funda para libros",
     "name": "Funda Tejida",
     "desc": "Funda hecha a mano para tu libro o e-reader",
     "price": "20,00 €",
