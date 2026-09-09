@@ -22,6 +22,7 @@ export function ProductsSection({ onRequestBox }: ProductsSectionProps) {
                         <ProductCard
                             key={product.name}
                             name={product.name}
+                            productType={product.productType}
                             desc={product.desc}
                             price={product.price}
                             includes={product.includes}

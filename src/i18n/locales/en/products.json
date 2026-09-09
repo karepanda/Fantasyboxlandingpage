@@ -29,16 +29,19 @@
     }
   },
   "bookmarks": {
-    "name": "Set of BookMarks",
-    "desc": "Curated collection of handmade bookmarks",
+    "buttonText": "Request bookmarks",
+    "name": "Set of bookmarks",
+    "desc": "Collection of laminated bookmarks",
     "price": "7.50 EUR",
+    "footerNote": "Final price depends on the postage",
     "includes": {
-      "collection": "3 unique bookmarks",
-      "styles": "Various styles and materials",
-      "packaging": "Gift-ready packaging"
+      "collection": "4 unique bookmarks",
+      "styles": "Choose the set you want",
+      "packaging": "Available on Vinted"
     }
   },
   "sleeve": {
+    "buttonText": "Request book sleeve",
     "name": "Knitted Sleeve",
     "desc": "Handmade sleeve for your book or e-reader",
     "price": "20.00 EUR",

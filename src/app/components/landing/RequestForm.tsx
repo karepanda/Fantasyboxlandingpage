@@ -45,6 +45,17 @@ const COLOR_OPTIONS: ColorOption[] = [
     { name: "Pink", value: "#EC4899" },
 ];
 
+interface CollectionOption {
+    value: string;
+    labelKey: string;
+    disabled?: boolean;
+}
+
+const COLLECTION_OPTIONS: CollectionOption[] = [
+    { value: "halloween", labelKey: "fields.collection.halloween" },
+    { value: "autumn", labelKey: "fields.collection.autumn", disabled: true },
+];
+
 export function RequestForm({
                                 productType,
                                 productLabel,
@@ -67,6 +78,7 @@ export function RequestForm({
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
+    const [selectedCollection, setSelectedCollection] = useState("halloween");
 
     const readerType = watch("readerType");
     const selectedColor = watch("selectedColor");
@@ -78,6 +90,9 @@ export function RequestForm({
         try {
             // Find the color name from COLOR_OPTIONS
             const colorName = colorOptions.find((color) => color.value === data.selectedColor)?.name || "";
+            const collectionName = isBookmarksSet
+                ? t(COLLECTION_OPTIONS.find((option) => option.value === selectedCollection)?.labelKey ?? "", { lng: "en" })
+                : "";
 
             // Build the payload for Google Apps Script
             const payload: Record<string, string | undefined> = {
@@ -88,7 +103,8 @@ export function RequestForm({
                 city: data.city,
                 zip: data.zipCode,
                 phone: data.phoneNumber,
-                color: colorName,
+                // Existing Google Sheets scripts read the selection from color.
+                color: isBookmarksSet ? collectionName : colorName,
                 comments: data.doubts,
                 readerType: data.readerType,
                 readerModel: data.readerModel,
@@ -128,6 +144,7 @@ export function RequestForm({
 
     const isFantasyBox = productType.includes("FantasyBox");
     const isKnittedSleeve = productType.includes("Knitted Sleeve");
+    const isBookmarksSet = productType.toLowerCase().includes("bookmark");
 
     return (
         <RemoveScroll>
@@ -342,8 +359,26 @@ export function RequestForm({
                                     </div>
                                 )}
 
-                                {/* Color Selector */}
-                                {hideColorSelector ? (
+                                {/* Color / Collection Selector */}
+                                {isBookmarksSet ? (
+                                    <div>
+                                        <h3 className="fb-heading text-lg mb-4">{t("sections.chooseCollection")}</h3>
+                                        <div className="grid grid-cols-2 gap-3">
+                                            {COLLECTION_OPTIONS.map((option) => (
+                                                <FantasyButton
+                                                    key={option.value}
+                                                    type="button"
+                                                    variant={selectedCollection === option.value ? "coffee" : "secondary"}
+                                                    disabled={option.disabled}
+                                                    className={option.disabled ? "opacity-50 cursor-not-allowed" : ""}
+                                                    onClick={() => setSelectedCollection(option.value)}
+                                                >
+                                                    {t(option.labelKey)}
+                                                </FantasyButton>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ) : hideColorSelector ? (
                                     <input
                                         type="hidden"
                                         value={initialSelectedColor?.value ?? COLOR_OPTIONS[0].value}
