@@ -7,7 +7,7 @@
   "classicBox": {
     "name": "Classic FantasyBox",
     "desc": "The essential reading experience with all the cozy details",
-    "price": "29.30 EUR",
+    "price": "31.90 €",
     "includes": {
       "book": "Your chosen book",
       "bookmark": "Bookmark",
@@ -20,12 +20,12 @@
   "cozyBox": {
     "name": "Cozy FantasyBox",
     "desc": "Enhanced comfort with extra warmth and aesthetic touches",
-    "price": "35.00 EUR",
+    "price": "37.00 €",
     "includes": {
       "everything": "Everything of Classic",
       "candle": "Thematic candle",
       "journal": "Reading journal",
-      "stationery": "Extra stationery"
+      "stationery": "Extra stationery and three gifts"
     }
   },
   "bookmarks": {
