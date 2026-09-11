@@ -22,12 +22,14 @@ export interface HeroTranslations {
 
 export interface ProductsTranslations {
   title: string;
+  buttonText: string;
+  viewImage: string;
+  includesLabel: string;
+  footerNote: string;
   classicBox: {
     name: string;
     desc: string;
     price: string;
-    footerNote: string;
-    buttonText: string;
     includes: {
       book: string;
       bookmark: string;
@@ -71,7 +73,49 @@ export interface ProductsTranslations {
       colors: string;
     };
   };
+  contentDialog: {
+    trigger: string;
+    close: string;
+    description: string;
+    important: {
+      title: string;
+      notIncluded: string;
+      pricing: string;
+    };
+    classic: {
+      title: string;
+      items: {
+        sleeve: ContentItemTranslations;
+        bookmark: ContentItemTranslations;
+        annotationKit: ContentItemTranslations & {
+          details: {
+            highlighter: string;
+            transparentNotes: string;
+            indexFlags: string;
+            gelPen: string;
+            coloredPencil: string;
+          };
+        };
+        cornerProtectors: ContentItemTranslations;
+        stickers: ContentItemTranslations;
+        specialGifts: ContentItemTranslations;
+      };
+    };
+    cozy: {
+      title: string;
+      items: {
+        classicContents: ContentItemTranslations;
+        candle: ContentItemTranslations;
+        readingJournal: ContentItemTranslations;
+        specialGifts: ContentItemTranslations;
+      };
+    };
+  };
+}
 
+interface ContentItemTranslations {
+  title: string;
+  description: string;
 }
 
 

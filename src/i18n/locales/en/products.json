@@ -3,9 +3,9 @@
   "buttonText": "Request this box",
   "viewImage": "View image",
   "includesLabel": "Includes:",
-  "footerNote": "Final price depends on the selected book and shipping",
+  "footerNote": "The book and shipping are added separately",
   "classicBox": {
-    "name": "Classic FantasyBox",
+    "name": "FantasyBox Classic",
     "desc": "The essential reading experience with all the cozy details",
     "price": "31.90 €",
     "includes": {
@@ -18,7 +18,7 @@
     }
   },
   "cozyBox": {
-    "name": "Cozy FantasyBox",
+    "name": "FantasyBox Cozy",
     "desc": "Enhanced comfort with extra warmth and aesthetic touches",
     "price": "37.00 €",
     "includes": {
@@ -49,6 +49,73 @@
       "fit": "Custom fit",
       "material": "Cozy knit material",
       "colors": "Choice of colors"
+    }
+  },
+  "contentDialog": {
+    "trigger": "See what's inside",
+    "close": "Close",
+    "description": "Explore all the accessories and details included in this box.",
+    "important": {
+      "title": "Important",
+      "notIncluded": "The book and shipping are NOT included in the price of the box.",
+      "pricing": "You choose the book you want to receive and its price is added separately. Shipping is also calculated separately according to the destination and delivery method."
+    },
+    "classic": {
+      "title": "What does the FantasyBox Classic include?",
+      "items": {
+        "sleeve": {
+          "title": "Handmade book sleeve",
+          "description": "An artisan crochet sleeve to protect your book. You can choose from the available designs."
+        },
+        "bookmark": {
+          "title": "Laminated bookmark",
+          "description": "Designed to complement the box's aesthetic and your reading moments."
+        },
+        "annotationKit": {
+          "title": "Annotation kit",
+          "description": "Everything you need to highlight, annotate, and personalize your reading.",
+          "details": {
+            "highlighter": "Highlighter",
+            "transparentNotes": "Transparent sticky notes",
+            "indexFlags": "Index flags in 4 colors",
+            "gelPen": "Gel pen",
+            "coloredPencil": "Colored pencil"
+          }
+        },
+        "cornerProtectors": {
+          "title": "4 corner protectors",
+          "description": "Help protect the corners of your book while you read."
+        },
+        "stickers": {
+          "title": "Stickers",
+          "description": "A selection for decorating your book, reading journal, or other items."
+        },
+        "specialGifts": {
+          "title": "Special gifts",
+          "description": "Every order includes special gifts carefully selected to complete the FantasyBox experience. They may vary with each order."
+        }
+      }
+    },
+    "cozy": {
+      "title": "What does the FantasyBox Cozy include?",
+      "items": {
+        "classicContents": {
+          "title": "Everything included in the FantasyBox Classic",
+          "description": "Includes all the essential Classic accessories:"
+        },
+        "candle": {
+          "title": "Scented candle",
+          "description": "For creating a cozy atmosphere during your reading sessions. You can choose from the available scents."
+        },
+        "readingJournal": {
+          "title": "Reading journal",
+          "description": "A black notebook with gold decoration for keeping opinions, notes, ratings, and details of every read."
+        },
+        "specialGifts": {
+          "title": "Special gifts",
+          "description": "Every order includes special gifts carefully selected to complete the FantasyBox experience. They may vary with each order."
+        }
+      }
     }
   }
 }

@@ -30,6 +30,7 @@ export function ProductsSection({ onRequestBox }: ProductsSectionProps) {
                             onRequestBox={onRequestBox}
                             footerNote={product.footerNote}
                             buttonText={product.buttonText}
+                            contents={product.contents}
                         />
                     ))}
                 </div>

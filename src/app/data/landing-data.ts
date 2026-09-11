@@ -9,23 +9,99 @@ import sleeveRedWhite from "../../imports/bookSleeve roja.jpg";
 import coverPinkGreen from "../../imports/BookCover RVB.jpg";
 import sleeveKindle from "../../imports/funda kindle VMB.jpg";
 
+export interface ProductContentItem {
+  icon: string;
+  title: string;
+  description: string;
+  details?: string[];
+}
 
-export const products = [
+export interface ProductContents {
+  title: string;
+  items: ProductContentItem[];
+  importantTitle: string;
+  importantText: string[];
+}
+
+export interface Product {
+  name: string;
+  productType?: string;
+  desc: string;
+  price?: string;
+  includes: string[];
+  img: string;
+  footerNote?: string;
+  buttonText?: string;
+  contents?: ProductContents;
+}
+
+const importantPurchaseInformation = {
+  importantTitle: "contentDialog.important.title",
+  importantText: [
+    "contentDialog.important.notIncluded",
+    "contentDialog.important.pricing",
+  ],
+};
+
+export const products: Product[] = [
   {
     name: "classicBox.name",
     desc: "classicBox.desc",
     price: "classicBox.price",
     includes: [
-      "classicBox.includes.book",
-      "classicBox.includes.bookmark",
-      "classicBox.includes.indexFlags",
-      "classicBox.includes.stickyNotes",
-      "classicBox.includes.pen",
-      "classicBox.includes.bookSleeve",
+      "contentDialog.classic.items.sleeve.title",
+      "contentDialog.classic.items.bookmark.title",
+      "contentDialog.classic.items.annotationKit.title",
+      "contentDialog.classic.items.cornerProtectors.title",
+      "contentDialog.classic.items.stickers.title",
+      "contentDialog.classic.items.specialGifts.title",
     ],
     img: img2,
     footerNote: "footerNote",
     buttonText: "buttonText",
+    contents: {
+      title: "contentDialog.classic.title",
+      items: [
+        {
+          icon: "🧶",
+          title: "contentDialog.classic.items.sleeve.title",
+          description: "contentDialog.classic.items.sleeve.description",
+        },
+        {
+          icon: "🔖",
+          title: "contentDialog.classic.items.bookmark.title",
+          description: "contentDialog.classic.items.bookmark.description",
+        },
+        {
+          icon: "📝",
+          title: "contentDialog.classic.items.annotationKit.title",
+          description: "contentDialog.classic.items.annotationKit.description",
+          details: [
+            "contentDialog.classic.items.annotationKit.details.highlighter",
+            "contentDialog.classic.items.annotationKit.details.transparentNotes",
+            "contentDialog.classic.items.annotationKit.details.indexFlags",
+            "contentDialog.classic.items.annotationKit.details.gelPen",
+            "contentDialog.classic.items.annotationKit.details.coloredPencil",
+          ],
+        },
+        {
+          icon: "⭐",
+          title: "contentDialog.classic.items.cornerProtectors.title",
+          description: "contentDialog.classic.items.cornerProtectors.description",
+        },
+        {
+          icon: "🎀",
+          title: "contentDialog.classic.items.stickers.title",
+          description: "contentDialog.classic.items.stickers.description",
+        },
+        {
+          icon: "💌",
+          title: "contentDialog.classic.items.specialGifts.title",
+          description: "contentDialog.classic.items.specialGifts.description",
+        },
+      ],
+      ...importantPurchaseInformation,
+    },
   },
   {
     name: "cozyBox.name",
@@ -33,13 +109,50 @@ export const products = [
     price: "cozyBox.price",
     includes: [
       "cozyBox.includes.everything",
-      "cozyBox.includes.candle",
-      "cozyBox.includes.journal",
-      "cozyBox.includes.stationery",
+      "contentDialog.cozy.items.candle.title",
+      "contentDialog.cozy.items.readingJournal.title",
+      "contentDialog.cozy.items.specialGifts.title",
     ],
     img: img3,
     footerNote: "footerNote",
     buttonText: "buttonText",
+    contents: {
+      title: "contentDialog.cozy.title",
+      items: [
+        {
+          icon: "🧶",
+          title: "contentDialog.cozy.items.classicContents.title",
+          description: "contentDialog.cozy.items.classicContents.description",
+          details: [
+            "contentDialog.classic.items.sleeve.title",
+            "contentDialog.classic.items.bookmark.title",
+            "contentDialog.classic.items.annotationKit.details.highlighter",
+            "contentDialog.classic.items.annotationKit.details.transparentNotes",
+            "contentDialog.classic.items.annotationKit.details.indexFlags",
+            "contentDialog.classic.items.annotationKit.details.gelPen",
+            "contentDialog.classic.items.annotationKit.details.coloredPencil",
+            "contentDialog.classic.items.cornerProtectors.title",
+            "contentDialog.classic.items.stickers.title",
+          ],
+        },
+        {
+          icon: "🕯️",
+          title: "contentDialog.cozy.items.candle.title",
+          description: "contentDialog.cozy.items.candle.description",
+        },
+        {
+          icon: "📖",
+          title: "contentDialog.cozy.items.readingJournal.title",
+          description: "contentDialog.cozy.items.readingJournal.description",
+        },
+        {
+          icon: "💌",
+          title: "contentDialog.cozy.items.specialGifts.title",
+          description: "contentDialog.cozy.items.specialGifts.description",
+        },
+      ],
+      ...importantPurchaseInformation,
+    },
   },
   {
     name: "bookmarks.name",

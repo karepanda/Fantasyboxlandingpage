@@ -2,7 +2,9 @@ import { useState } from "react";
 import { CheckCircle } from "lucide-react";
 import { FantasyButton } from "./FantasyButton";
 import { RequestForm } from "./RequestForm";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
+import type { ProductContents } from "../../data/landing-data";
+import { BoxContentsDialog } from "./BoxContentsDialog";
 
 interface ProductCardProps {
     name: string;
@@ -14,6 +16,7 @@ interface ProductCardProps {
     onRequestBox: () => void;
     footerNote?: string;
     buttonText?: string;
+    contents?: ProductContents;
 }
 
 export function ProductCard({
@@ -25,6 +28,7 @@ export function ProductCard({
                                 img,
                                 footerNote = "footerNote",
                                 buttonText = "requestButton",
+                                contents,
                             }: ProductCardProps) {
     const [isZoomed, setIsZoomed] = useState(false);
     const [isFormOpen, setIsFormOpen] = useState(false);
@@ -43,7 +47,7 @@ export function ProductCard({
                 )}
                 <img src={img} alt={translatedName} className="h-64 w-full object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                    <p className="text-white text-center text-lg font-medium">View image</p>
+                    <p className="text-white text-center text-lg font-medium">{t("viewImage")}</p>
                 </div>
             </div>
 
@@ -75,9 +79,13 @@ export function ProductCard({
                     {t(footerNote)}
                 </p>
 
-                <FantasyButton variant="coffee" onClick={() => setIsFormOpen(true)}>
-                    {t(buttonText)}
-                </FantasyButton>
+                <div className="fb-card-actions">
+                    {contents && <BoxContentsDialog contents={contents} />}
+
+                    <FantasyButton variant="coffee" onClick={() => setIsFormOpen(true)}>
+                        {t(buttonText)}
+                    </FantasyButton>
+                </div>
             </div>
 
             {/* Lightbox Modal */}

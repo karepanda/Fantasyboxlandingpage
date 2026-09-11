@@ -1,11 +1,11 @@
 {
   "title": "Nuestros Productos",
-  "footerNote": "El precio final depende del libro seleccionado y del envío",
+  "footerNote": "El libro y el envío se añaden por separado",
   "buttonText": "Solicitar esta caja",
   "viewImage": "Ver imagen",
   "includesLabel": "Incluye:",
   "classicBox": {
-    "name": "FantasyBox Clásico",
+    "name": "FantasyBox Classic",
     "desc": "La experiencia de lectura esencial con todos los detalles acogedores",
     "price": "31,90 €",
     "includes": {
@@ -18,7 +18,7 @@
     }
   },
   "cozyBox": {
-    "name": "FantasyBox Acogedor",
+    "name": "FantasyBox Cozy",
     "desc": "Comodidad mejorada con calidez extra y toques estéticos",
     "price": "37,00 €",
     "includes": {
@@ -49,6 +49,73 @@
       "fit": "Ajuste personalizado",
       "material": "Material tejido acogedor",
       "colors": "Variedad de colores"
+    }
+  },
+  "contentDialog": {
+    "trigger": "Ver qué contiene",
+    "close": "Cerrar",
+    "description": "Consulta todos los accesorios y detalles incluidos en esta caja.",
+    "important": {
+      "title": "Importante",
+      "notIncluded": "El libro y el envío NO están incluidos en el precio de la caja.",
+      "pricing": "Tú eliges el libro que quieres recibir y su precio se añade por separado. El envío también se calcula aparte según el destino y la modalidad de entrega."
+    },
+    "classic": {
+      "title": "¿Qué incluye la FantasyBox Classic?",
+      "items": {
+        "sleeve": {
+          "title": "Funda para libro hecha a mano",
+          "description": "Funda de crochet artesanal para proteger el libro. Puedes elegir entre los modelos disponibles."
+        },
+        "bookmark": {
+          "title": "Marcapáginas laminado",
+          "description": "Diseñado para acompañar la estética de la caja y tus momentos de lectura."
+        },
+        "annotationKit": {
+          "title": "Kit de anotación",
+          "description": "Todo lo necesario para subrayar, anotar y personalizar la lectura.",
+          "details": {
+            "highlighter": "Resaltador",
+            "transparentNotes": "Notas adhesivas transparentes",
+            "indexFlags": "Banderitas índice de 4 colores",
+            "gelPen": "Bolígrafo de gel",
+            "coloredPencil": "Lápiz de color"
+          }
+        },
+        "cornerProtectors": {
+          "title": "4 protectores de esquinas",
+          "description": "Ayudan a proteger las esquinas del libro durante su uso."
+        },
+        "stickers": {
+          "title": "Stickers",
+          "description": "Una selección para decorar el libro, el diario de lectura u otros objetos."
+        },
+        "specialGifts": {
+          "title": "Regalos especiales",
+          "description": "Cada pedido incluye regalos especiales cuidadosamente seleccionados para completar la experiencia FantasyBox. Pueden variar según el pedido."
+        }
+      }
+    },
+    "cozy": {
+      "title": "¿Qué incluye la FantasyBox Cozy?",
+      "items": {
+        "classicContents": {
+          "title": "Todo lo que incluye la FantasyBox Classic",
+          "description": "Incluye todos los accesorios esenciales de la Classic:"
+        },
+        "candle": {
+          "title": "Vela aromática",
+          "description": "Para acompañar tus sesiones de lectura y crear un ambiente acogedor. Puedes elegir entre los aromas disponibles."
+        },
+        "readingJournal": {
+          "title": "Diario de lectura",
+          "description": "Cuaderno negro con decoración dorada para guardar opiniones, notas, valoraciones y datos de cada lectura."
+        },
+        "specialGifts": {
+          "title": "Regalos especiales",
+          "description": "Cada pedido incluye regalos especiales cuidadosamente seleccionados para completar la experiencia FantasyBox. Pueden variar según el pedido."
+        }
+      }
     }
   }
 }
