@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { lazy, Suspense, useEffect, useState, type KeyboardEvent } from "react";
 import { CheckCircle } from "lucide-react";
 import { FantasyButton } from "./FantasyButton";
-import { RequestForm } from "./RequestForm";
 import { useTranslation } from "react-i18next";
-import type { ProductContents } from "../../data/landing-data";
+import type { ProductContents, ResponsiveImage } from "../../data/landing-data";
 import { BoxContentsDialog } from "./BoxContentsDialog";
+
+const loadRequestForm = () => import("./RequestForm").then(({ RequestForm }) => ({ default: RequestForm }));
+const LazyRequestForm = lazy(loadRequestForm);
 
 interface ProductCardProps {
     name: string;
@@ -12,7 +14,7 @@ interface ProductCardProps {
     desc: string;
     price?: string;
     includes: string[];
-    img: string;
+    img: ResponsiveImage;
     onRequestBox: () => void;
     footerNote?: string;
     buttonText?: string;
@@ -36,16 +38,52 @@ export function ProductCard({
 
     const translatedName = t(name);
 
+    useEffect(() => {
+        if (!isZoomed) return;
+        const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setIsZoomed(false);
+            }
+        };
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, [isZoomed]);
+
     return (
         <div className="fb-card">
             {/* Image with hover overlay */}
-            <div className="group relative cursor-pointer" onClick={() => setIsZoomed(true)}>
+            <div
+                className="group relative cursor-pointer"
+                role="button"
+                tabIndex={0}
+                aria-label={t("viewImage")}
+                onClick={() => setIsZoomed(true)}
+                onKeyDown={(event: KeyboardEvent<HTMLDivElement>) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setIsZoomed(true);
+                    }
+                }}
+            >
                 {price && (
                     <div className="absolute right-3 top-3 z-10 rounded-full bg-[var(--fb-cream)] px-3 py-1 text-sm font-semibold text-[var(--fb-dark)] shadow">
                         {t(price)}
                     </div>
                 )}
-                <img src={img} alt={translatedName} className="h-64 w-full object-cover" />
+                <picture className="block">
+                    <source type="image/webp" srcSet={img.srcSet} sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)" />
+                    <img
+                        src={img.src}
+                        srcSet={img.srcSet}
+                        sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)"
+                        width={img.width}
+                        height={img.height}
+                        alt={translatedName}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-64 w-full object-cover"
+                    />
+                </picture>
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                     <p className="text-white text-center text-lg font-medium">{t("viewImage")}</p>
                 </div>
@@ -82,7 +120,13 @@ export function ProductCard({
                 <div className="fb-card-actions">
                     {contents && <BoxContentsDialog contents={contents} />}
 
-                    <FantasyButton variant="coffee" onClick={() => setIsFormOpen(true)}>
+                    <FantasyButton
+                        variant="coffee"
+                        onPointerEnter={() => void loadRequestForm()}
+                        onFocus={() => void loadRequestForm()}
+                        onPointerDown={() => void loadRequestForm()}
+                        onClick={() => setIsFormOpen(true)}
+                    >
                         {t(buttonText)}
                     </FantasyButton>
                 </div>
@@ -95,7 +139,9 @@ export function ProductCard({
                     onClick={() => setIsZoomed(false)}
                 >
                     <img
-                        src={img}
+                        src={img.fullSrc}
+                        width={img.width}
+                        height={img.height}
                         alt={translatedName}
                         className="max-h-screen max-w-screen object-contain"
                     />
@@ -104,11 +150,13 @@ export function ProductCard({
 
             {/* Request Form Modal */}
             {isFormOpen && (
-                <RequestForm
-                    productType={productType ?? t(name, { lng: "en" })}
-                    productLabel={translatedName}
-                    onClose={() => setIsFormOpen(false)}
-                />
+                <Suspense fallback={null}>
+                    <LazyRequestForm
+                        productType={productType ?? t(name, { lng: "en" })}
+                        productLabel={translatedName}
+                        onClose={() => setIsFormOpen(false)}
+                    />
+                </Suspense>
             )}
         </div>
     );

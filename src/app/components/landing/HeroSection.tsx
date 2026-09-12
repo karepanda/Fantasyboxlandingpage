@@ -1,6 +1,8 @@
 import { BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import img1 from "../../../imports/purpleAndGreenClassicFantasyBox2.jpg";
+import hero480 from "../../../imports/purpleAndGreenClassicFantasyBox2-480.webp";
+import hero768 from "../../../imports/purpleAndGreenClassicFantasyBox2-768.webp";
+import hero1024 from "../../../imports/purpleAndGreenClassicFantasyBox2-1024.webp";
 import { FantasyButton } from "./FantasyButton";
 
 export function HeroSection() {
@@ -36,11 +38,24 @@ export function HeroSection() {
                 </div>
 
                 <div className="overflow-hidden rounded-2xl shadow-lg">
-                    <img
-                        src={img1}
-                        alt={t("imageAlt")}
-                        className="h-auto w-full"
-                    />
+                    <picture className="block">
+                        <source
+                            type="image/webp"
+                            srcSet={`${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`}
+                            sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)"
+                        />
+                        <img
+                            src={hero1024}
+                            srcSet={`${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`}
+                            sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)"
+                            width={3072}
+                            height={4096}
+                            alt={t("imageAlt")}
+                            loading="eager"
+                            fetchPriority="high"
+                            className="h-auto w-full"
+                        />
+                    </picture>
                 </div>
             </div>
         </section>

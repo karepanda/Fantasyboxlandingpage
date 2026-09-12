@@ -1,13 +1,127 @@
 
 
-import img2 from "../../imports/classicFantasyBoxOrange.jpg";
-import img3 from "../../imports/cozyFantasyBoxBlue.jpg";
-import img4 from "../../imports/set front.jpg";
-import img5 from "../../imports/bookSleeve.jpg";
-import sleeveBlackWhite from "../../imports/fundas Pequenas VMB-BGN.jpg";
-import sleeveRedWhite from "../../imports/bookSleeve roja.jpg";
-import coverPinkGreen from "../../imports/BookCover RVB.jpg";
-import sleeveKindle from "../../imports/funda kindle VMB.jpg";
+import classicBoxFull from "../../imports/classicFantasyBoxOrange.webp";
+import classicBox480 from "../../imports/classicFantasyBoxOrange-480.webp";
+import classicBox768 from "../../imports/classicFantasyBoxOrange-768.webp";
+import classicBox1024 from "../../imports/classicFantasyBoxOrange-1024.webp";
+import cozyBoxFull from "../../imports/cozyFantasyBoxBlue.webp";
+import cozyBox480 from "../../imports/cozyFantasyBoxBlue-480.webp";
+import cozyBox768 from "../../imports/cozyFantasyBoxBlue-768.webp";
+import cozyBox1024 from "../../imports/cozyFantasyBoxBlue-1024.webp";
+import bookmarksFull from "../../imports/set front.webp";
+import bookmarks480 from "../../imports/set front-480.webp";
+import bookmarks768 from "../../imports/set front-768.webp";
+import bookmarks1024 from "../../imports/set front-1024.webp";
+import bookSleeveFull from "../../imports/bookSleeve.webp";
+import bookSleeve480 from "../../imports/bookSleeve-480.webp";
+import bookSleeve768 from "../../imports/bookSleeve-768.webp";
+import bookSleeve1024 from "../../imports/bookSleeve-1024.webp";
+import sleeveBlackWhiteFull from "../../imports/fundas Pequenas VMB-BGN.webp";
+import sleeveBlackWhite480 from "../../imports/fundas Pequenas VMB-BGN-480.webp";
+import sleeveBlackWhite768 from "../../imports/fundas Pequenas VMB-BGN-768.webp";
+import sleeveBlackWhite1024 from "../../imports/fundas Pequenas VMB-BGN-1024.webp";
+import sleeveRedWhiteFull from "../../imports/bookSleeve roja.webp";
+import sleeveRedWhite480 from "../../imports/bookSleeve roja-480.webp";
+import sleeveRedWhite768 from "../../imports/bookSleeve roja-768.webp";
+import sleeveRedWhite1024 from "../../imports/bookSleeve roja-1024.webp";
+import coverPinkGreenFull from "../../imports/BookCover RVB.webp";
+import coverPinkGreen480 from "../../imports/BookCover RVB-480.webp";
+import coverPinkGreen768 from "../../imports/BookCover RVB-768.webp";
+import coverPinkGreen1024 from "../../imports/BookCover RVB-1024.webp";
+import sleeveKindleFull from "../../imports/funda kindle VMB.webp";
+import sleeveKindle480 from "../../imports/funda kindle VMB-480.webp";
+import sleeveKindle768 from "../../imports/funda kindle VMB-768.webp";
+import sleeveKindle1024 from "../../imports/funda kindle VMB-1024.webp";
+
+export interface ResponsiveImage {
+  src: string;
+  srcSet: string;
+  fullSrc: string;
+  width: number;
+  height: number;
+}
+
+function createResponsiveImage(
+  fullSrc: string,
+  src480: string,
+  src768: string,
+  src1024: string,
+  width: number,
+  height: number,
+): ResponsiveImage {
+  return {
+    src: src1024,
+    srcSet: `${src480} 480w, ${src768} 768w, ${src1024} 1024w`,
+    fullSrc,
+    width,
+    height,
+  };
+}
+
+const classicBoxImage = createResponsiveImage(
+  classicBoxFull,
+  classicBox480,
+  classicBox768,
+  classicBox1024,
+  3072,
+  4096,
+);
+const cozyBoxImage = createResponsiveImage(
+  cozyBoxFull,
+  cozyBox480,
+  cozyBox768,
+  cozyBox1024,
+  3071,
+  4096,
+);
+const bookmarksImage = createResponsiveImage(
+  bookmarksFull,
+  bookmarks480,
+  bookmarks768,
+  bookmarks1024,
+  3072,
+  4096,
+);
+const bookSleeveImage = createResponsiveImage(
+  bookSleeveFull,
+  bookSleeve480,
+  bookSleeve768,
+  bookSleeve1024,
+  4096,
+  3072,
+);
+const sleeveBlackWhiteImage = createResponsiveImage(
+  sleeveBlackWhiteFull,
+  sleeveBlackWhite480,
+  sleeveBlackWhite768,
+  sleeveBlackWhite1024,
+  3072,
+  4096,
+);
+const sleeveRedWhiteImage = createResponsiveImage(
+  sleeveRedWhiteFull,
+  sleeveRedWhite480,
+  sleeveRedWhite768,
+  sleeveRedWhite1024,
+  2772,
+  3697,
+);
+const coverPinkGreenImage = createResponsiveImage(
+  coverPinkGreenFull,
+  coverPinkGreen480,
+  coverPinkGreen768,
+  coverPinkGreen1024,
+  3072,
+  4096,
+);
+const sleeveKindleImage = createResponsiveImage(
+  sleeveKindleFull,
+  sleeveKindle480,
+  sleeveKindle768,
+  sleeveKindle1024,
+  3072,
+  4096,
+);
 
 export interface ProductContentItem {
   icon: string;
@@ -29,7 +143,7 @@ export interface Product {
   desc: string;
   price?: string;
   includes: string[];
-  img: string;
+  img: ResponsiveImage;
   footerNote?: string;
   buttonText?: string;
   contents?: ProductContents;
@@ -56,7 +170,7 @@ export const products: Product[] = [
       "contentDialog.classic.items.stickers.title",
       "contentDialog.classic.items.specialGifts.title",
     ],
-    img: img2,
+    img: classicBoxImage,
     footerNote: "footerNote",
     buttonText: "buttonText",
     contents: {
@@ -113,7 +227,7 @@ export const products: Product[] = [
       "contentDialog.cozy.items.readingJournal.title",
       "contentDialog.cozy.items.specialGifts.title",
     ],
-    img: img3,
+    img: cozyBoxImage,
     footerNote: "footerNote",
     buttonText: "buttonText",
     contents: {
@@ -165,7 +279,7 @@ export const products: Product[] = [
       "bookmarks.includes.styles",
       "bookmarks.includes.packaging",
     ],
-    img: img4,
+    img: bookmarksImage,
     footerNote: "bookmarks.footerNote",
     buttonText: "bookmarks.buttonText",
   },
@@ -178,7 +292,7 @@ export const products: Product[] = [
       "sleeve.includes.material",
       "sleeve.includes.colors",
     ],
-    img: img5,
+    img: bookSleeveImage,
     footerNote: "footerNote",
     buttonText: "sleeve.buttonText",
   },
@@ -190,7 +304,7 @@ export interface FinishedProduct {
   price: string;
   colorName: string;
   colorValue: string;
-  img: string;
+  img: ResponsiveImage;
 }
 
 export const finishedProducts: FinishedProduct[] = [
@@ -200,7 +314,7 @@ export const finishedProducts: FinishedProduct[] = [
     price: "finishedProducts.BlackAndWhite.price",
     colorName: "finishedProducts.BlackAndWhite.colorName",
     colorValue: "#7D7D7D",
-    img: sleeveBlackWhite,
+    img: sleeveBlackWhiteImage,
   },
   {
     name: "finishedProducts.sleeveRedWhite.name",
@@ -208,7 +322,7 @@ export const finishedProducts: FinishedProduct[] = [
     price: "finishedProducts.sleeveRedWhite.price",
     colorName: "finishedProducts.sleeveRedWhite.colorName",
     colorValue: "#4F6F52",
-    img: sleeveRedWhite,
+    img: sleeveRedWhiteImage,
   },
   {
     name: "finishedProducts.PinkGreenCover.name",
@@ -216,7 +330,7 @@ export const finishedProducts: FinishedProduct[] = [
     price: "finishedProducts.PinkGreenCover.price",
     colorName: "finishedProducts.PinkGreenCover.colorName",
     colorValue: "#6B3FA0",
-    img: coverPinkGreen,
+    img: coverPinkGreenImage,
   },
   {
     name: "finishedProducts.kindleVmb.name",
@@ -224,6 +338,6 @@ export const finishedProducts: FinishedProduct[] = [
     price: "finishedProducts.kindleVmb.price",
     colorName: "finishedProducts.kindleVmb.colorName",
     colorValue: "#7D6A9B",
-    img: sleeveKindle,
+    img: sleeveKindleImage,
   },
 ];

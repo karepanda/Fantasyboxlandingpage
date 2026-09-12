@@ -32,6 +32,8 @@ export function FaqSection() {
                                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
                                 className="flex w-full items-center justify-between p-5 text-left"
                                 style={{cursor: 'pointer'}}
+                                aria-expanded={openFaq === index}
+                                aria-controls={`faq-answer-${index}`}
                             >
                 <span className="fb-heading text-lg text-[var(--fb-text)]">
                   {t(faq.qKey)}
@@ -45,7 +47,7 @@ export function FaqSection() {
                             </button>
 
                             {openFaq === index && (
-                                <div className="px-5 pb-5 opacity-80">
+                                <div id={`faq-answer-${index}`} className="px-5 pb-5 opacity-80">
                                     {t(faq.aKey)}
                                 </div>
                             )}
