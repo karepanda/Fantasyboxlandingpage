@@ -53,7 +53,7 @@ interface CollectionOption {
 
 const COLLECTION_OPTIONS: CollectionOption[] = [
     { value: "halloween", labelKey: "fields.collection.halloween" },
-    { value: "autumn", labelKey: "fields.collection.autumn", disabled: true },
+    { value: "autumn", labelKey: "fields.collection.autumn" },
 ];
 
 export function RequestForm({
