@@ -13,6 +13,7 @@ interface ProductCardProps {
     productType?: string;
     desc: string;
     price?: string;
+    originalPrice?: string;
     includes: string[];
     img: ResponsiveImage;
     onRequestBox: () => void;
@@ -26,6 +27,7 @@ export function ProductCard({
                                 productType,
                                 desc,
                                 price,
+                                originalPrice,
                                 includes,
                                 img,
                                 footerNote = "footerNote",
@@ -66,12 +68,15 @@ export function ProductCard({
                 }}
             >
                 {price && (
-                    <div className="absolute right-3 top-3 z-10 rounded-full bg-[var(--fb-cream)] px-3 py-1 text-sm font-semibold text-[var(--fb-dark)] shadow">
-                        {t(price)}
+                    <div className="fb-product-price-badge">
+                        {originalPrice && (
+                            <span className="fb-product-original-price">{t(originalPrice)}</span>
+                        )}
+                        <span>{t(price)}</span>
                     </div>
                 )}
                 <picture className="block">
-                    <source type="image/webp" srcSet={img.srcSet} sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)" />
+                    <source type={img.mimeType ?? "image/webp"} srcSet={img.srcSet} sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)" />
                     <img
                         src={img.src}
                         srcSet={img.srcSet}

@@ -40,6 +40,19 @@
       "packaging": "Disponible en Vinted"
     }
   },
+  "toteBags": {
+    "buttonText": "Solicitar una tote bag",
+    "name": "Tote bags lectoras",
+    "desc": "Elige entre seis diseños literarios",
+    "originalPrice": "17,99 €",
+    "salePrice": "15,99 €",
+    "footerNote": "El precio final varía según el método de entrega",
+    "includes": {
+      "size": "Tote bag grande de 40 × 40 cm",
+      "fastening": "Cierre para llevar tus cosas con seguridad",
+      "purpose": "Perfecta para llevar tus libros a todas partes"
+    }
+  },
   "sleeve": {
     "buttonText": "Solicitar funda para libros",
     "name": "Funda Tejida",

@@ -40,6 +40,19 @@
       "packaging": "Available on Vinted"
     }
   },
+  "toteBags": {
+    "buttonText": "Request a tote bag",
+    "name": "Reading tote bags",
+    "desc": "Choose from six literary designs",
+    "originalPrice": "€17.99",
+    "salePrice": "€15.99",
+    "footerNote": "The final price varies depending on the delivery method",
+    "includes": {
+      "size": "Large 40 × 40 cm tote bag",
+      "fastening": "Fastening to keep your belongings secure",
+      "purpose": "Perfect for carrying your books everywhere"
+    }
+  },
   "sleeve": {
     "buttonText": "Request book sleeve",
     "name": "Knitted Sleeve",
