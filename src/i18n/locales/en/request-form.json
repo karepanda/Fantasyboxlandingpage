@@ -14,6 +14,7 @@
     "readerType": "Reader Type",
     "chooseColor": "Choose a Color",
     "chooseCollection": "Choose your collection",
+    "chooseToteDesign": "Choose your tote bag design",
     "doubtsOrComments": "Doubts or Comments"
   },
   "fields": {
@@ -70,6 +71,15 @@
       "halloween": "Halloween set",
       "autumn": "Autumn set",
       "required": "Please choose a collection"
+    },
+    "toteDesign": {
+      "one": "Design 1 · I'd rather be reading right now",
+      "two": "Design 2 · I like books more than people",
+      "three": "Design 3 · A book a day keeps reality away",
+      "four": "Design 4 · I bring a book in case I get bored",
+      "five": "Design 5 · Reading is my only therapy",
+      "six": "Design 6 · A 10/10 who disappears when I close the book",
+      "required": "Please choose a tote bag design"
     },
     "doubts": {
       "placeholder": "Tell us anything else you'd like us to know..."

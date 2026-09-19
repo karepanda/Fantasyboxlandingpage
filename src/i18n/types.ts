@@ -73,6 +73,19 @@ export interface ProductsTranslations {
       colors: string;
     };
   };
+  toteBags: {
+    buttonText: string;
+    name: string;
+    desc: string;
+    originalPrice: string;
+    salePrice: string;
+    footerNote: string;
+    includes: {
+      size: string;
+      fastening: string;
+      purpose: string;
+    };
+  };
   contentDialog: {
     trigger: string;
     close: string;
@@ -244,6 +257,7 @@ export interface RequestFormTranslations {
     readerType: string;
     chooseColor: string;
     chooseCollection: string;
+    chooseToteDesign: string;
     doubtsOrComments: string;
   };
   fields: {
@@ -299,6 +313,15 @@ export interface RequestFormTranslations {
     collection: {
       halloween: string;
       autumn: string;
+      required: string;
+    };
+    toteDesign: {
+      one: string;
+      two: string;
+      three: string;
+      four: string;
+      five: string;
+      six: string;
       required: string;
     };
     doubts: {

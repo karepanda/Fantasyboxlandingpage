@@ -14,6 +14,7 @@
     "readerType": "Tipo de lector",
     "chooseColor": "Elige un color",
     "chooseCollection": "Elige tu colección",
+    "chooseToteDesign": "Elige el diseño de tu tote bag",
     "doubtsOrComments": "Dudas o comentarios"
   },
   "fields": {
@@ -70,6 +71,15 @@
       "halloween": "Set Halloween",
       "autumn": "Set Otoño",
       "required": "Elige una colección"
+    },
+    "toteDesign": {
+      "one": "Diseño 1 · En este momento prefiero estar leyendo",
+      "two": "Diseño 2 · Me gustan más los libros que las personas",
+      "three": "Diseño 3 · Un libro al día mantiene la realidad alejada",
+      "four": "Diseño 4 · Traigo un libro en caso de que me aburra",
+      "five": "Diseño 5 · Mi única terapia es leer",
+      "six": "Diseño 6 · Es un 10/10 pero desaparece cuando cierro el libro",
+      "required": "Elige un diseño de tote bag"
     },
     "doubts": {
       "placeholder": "Cuéntanos cualquier cosa adicional que quieras que sepamos..."

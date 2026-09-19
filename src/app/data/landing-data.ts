@@ -32,11 +32,16 @@ import sleeveKindleFull from "../../imports/funda kindle VMB.webp";
 import sleeveKindle480 from "../../imports/funda kindle VMB-480.webp";
 import sleeveKindle768 from "../../imports/funda kindle VMB-768.webp";
 import sleeveKindle1024 from "../../imports/funda kindle VMB-1024.webp";
+import toteBagsFull from "../../imports/tote1 prefiero estar leyendo.png";
+import toteBags480 from "../../imports/tote1-480.jpg";
+import toteBags768 from "../../imports/tote1-768.jpg";
+import toteBags1024 from "../../imports/tote1-1024.jpg";
 
 export interface ResponsiveImage {
   src: string;
   srcSet: string;
   fullSrc: string;
+  mimeType?: string;
   width: number;
   height: number;
 }
@@ -48,11 +53,13 @@ function createResponsiveImage(
   src1024: string,
   width: number,
   height: number,
+  mimeType = "image/webp",
 ): ResponsiveImage {
   return {
     src: src1024,
     srcSet: `${src480} 480w, ${src768} 768w, ${src1024} 1024w`,
     fullSrc,
+    mimeType,
     width,
     height,
   };
@@ -122,6 +129,15 @@ const sleeveKindleImage = createResponsiveImage(
   3072,
   4096,
 );
+const toteBagsImage = createResponsiveImage(
+  toteBagsFull,
+  toteBags480,
+  toteBags768,
+  toteBags1024,
+  1122,
+  1402,
+  "image/jpeg",
+);
 
 export interface ProductContentItem {
   icon: string;
@@ -142,6 +158,7 @@ export interface Product {
   productType?: string;
   desc: string;
   price?: string;
+  originalPrice?: string;
   includes: string[];
   img: ResponsiveImage;
   footerNote?: string;
@@ -282,6 +299,21 @@ export const products: Product[] = [
     img: bookmarksImage,
     footerNote: "bookmarks.footerNote",
     buttonText: "bookmarks.buttonText",
+  },
+  {
+    name: "toteBags.name",
+    productType: "Tote Bags",
+    desc: "toteBags.desc",
+    price: "toteBags.salePrice",
+    originalPrice: "toteBags.originalPrice",
+    includes: [
+      "toteBags.includes.size",
+      "toteBags.includes.fastening",
+      "toteBags.includes.purpose",
+    ],
+    img: toteBagsImage,
+    footerNote: "toteBags.footerNote",
+    buttonText: "toteBags.buttonText",
   },
   {
     name: "sleeve.name",

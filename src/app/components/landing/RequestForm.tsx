@@ -1,9 +1,14 @@
 import { useForm } from "react-hook-form";
 import { X, CheckCircle } from "lucide-react";
-import { RemoveScroll } from "react-remove-scroll";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FantasyButton } from "./FantasyButton";
 import {useTranslation} from "react-i18next";
+import tote1Image from "../../../imports/tote1-480.jpg";
+import tote2Image from "../../../imports/tote2-480.jpg";
+import tote3Image from "../../../imports/tote3-480.jpg";
+import tote4Image from "../../../imports/tote4-480.jpg";
+import tote5Image from "../../../imports/tote5-480.jpg";
+import tote6Image from "../../../imports/tote6-480.jpg";
 
 interface RequestFormProps {
     productType: string;
@@ -21,6 +26,7 @@ interface FormData {
     zipCode: string;
     phoneNumber: string;
     selectedColor: string;
+    selectedDesign: string;
     doubts: string;
     bookTitle?: string;
     readerType?: "physical" | "electronic";
@@ -56,6 +62,45 @@ const COLLECTION_OPTIONS: CollectionOption[] = [
     { value: "autumn", labelKey: "fields.collection.autumn" },
 ];
 
+interface ToteDesignOption {
+    value: string;
+    labelKey: string;
+    image: string;
+}
+
+const TOTE_DESIGN_OPTIONS: ToteDesignOption[] = [
+    {
+        value: "Tote 1 - En este momento prefiero estar leyendo",
+        labelKey: "fields.toteDesign.one",
+        image: tote1Image,
+    },
+    {
+        value: "Tote 2 - Me gustan mas los libros que las personas",
+        labelKey: "fields.toteDesign.two",
+        image: tote2Image,
+    },
+    {
+        value: "Tote 3 - Un libro al dia mantiene la realidad alejada",
+        labelKey: "fields.toteDesign.three",
+        image: tote3Image,
+    },
+    {
+        value: "Tote 4 - Traigo un libro en caso de que me aburra",
+        labelKey: "fields.toteDesign.four",
+        image: tote4Image,
+    },
+    {
+        value: "Tote 5 - Mi unica terapia es leer",
+        labelKey: "fields.toteDesign.five",
+        image: tote5Image,
+    },
+    {
+        value: "Tote 6 - Es un 10/10 pero desaparece cuando cierro el libro",
+        labelKey: "fields.toteDesign.six",
+        image: tote6Image,
+    },
+];
+
 export function RequestForm({
                                 productType,
                                 productLabel,
@@ -71,6 +116,7 @@ export function RequestForm({
     const { register, handleSubmit, formState: { errors }, watch } = useForm<FormData>({
         defaultValues: {
             selectedColor: initialSelectedColor?.value ?? COLOR_OPTIONS[0].value,
+            selectedDesign: TOTE_DESIGN_OPTIONS[0].value,
             readerType: "physical",
         },
     });
@@ -79,6 +125,15 @@ export function RequestForm({
     const [isSuccess, setIsSuccess] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
     const [selectedCollection, setSelectedCollection] = useState("halloween");
+
+    useEffect(() => {
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
+    }, []);
 
     const readerType = watch("readerType");
     const selectedColor = watch("selectedColor");
@@ -93,18 +148,25 @@ export function RequestForm({
             const collectionName = isBookmarksSet
                 ? t(COLLECTION_OPTIONS.find((option) => option.value === selectedCollection)?.labelKey ?? "", { lng: "en" })
                 : "";
+            const selectedProductOption = isToteBags
+                ? data.selectedDesign
+                : isBookmarksSet
+                    ? collectionName
+                    : colorName;
 
             // Build the payload for Google Apps Script
             const payload: Record<string, string | undefined> = {
                 name: data.fullName,
                 email: data.email,
                 productType: productType,
+                sheetName: isToteBags ? "tote bags" : undefined,
                 address: data.shippingAddress,
                 city: data.city,
                 zip: data.zipCode,
                 phone: data.phoneNumber,
                 // Existing Google Sheets scripts read the selection from color.
-                color: isBookmarksSet ? collectionName : colorName,
+                color: selectedProductOption,
+                design: isToteBags ? data.selectedDesign : undefined,
                 comments: data.doubts,
                 readerType: data.readerType,
                 readerModel: data.readerModel,
@@ -122,7 +184,7 @@ export function RequestForm({
 
             // Send it to Google Apps Script
             await fetch(
-                "https://script.google.com/macros/s/AKfycbzcKoBdHVBPqMXMMBK2tjlOKtWslQVBpCqbT8ltHDh_Nn18ulKk6FUT6oXbkOp0Bqvx/exec",
+                "https://script.google.com/macros/s/AKfycbzvslkHnJok9YBGbfGugHtvamVEYjcRrf5Ffkv8s-bfunjnhi3rIsntFvhdn6JeTjU/exec",
                 {
                     method: "POST",
                     mode: "no-cors",
@@ -145,10 +207,10 @@ export function RequestForm({
     const isFantasyBox = productType.includes("FantasyBox");
     const isKnittedSleeve = productType.includes("Knitted Sleeve");
     const isBookmarksSet = productType.toLowerCase().includes("bookmark");
+    const isToteBags = productType.toLowerCase().includes("tote");
 
     return (
-        <RemoveScroll>
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
                 <div className="fb-card w-full max-w-2xl max-h-[90vh] flex flex-col">
                     {isSuccess ? (
                         // Success Screen
@@ -359,8 +421,38 @@ export function RequestForm({
                                     </div>
                                 )}
 
-                                {/* Color / Collection Selector */}
-                                {isBookmarksSet ? (
+                                {/* Color / Collection / Tote Design Selector */}
+                                {isToteBags ? (
+                                    <div>
+                                        <h3 className="fb-heading text-lg mb-4">{t("sections.chooseToteDesign")}</h3>
+                                        <div className="fb-tote-design-grid">
+                                            {TOTE_DESIGN_OPTIONS.map((option, index) => (
+                                                <label key={option.value} className="fb-tote-design-option">
+                                                    <input
+                                                        type="radio"
+                                                        value={option.value}
+                                                        {...register("selectedDesign", { required: t("fields.toteDesign.required") })}
+                                                        className="fb-tote-design-input"
+                                                    />
+                                                    <span className="fb-tote-design-card">
+                                                        <img
+                                                            src={option.image}
+                                                            width={480}
+                                                            height={index === 5 ? 526 : 600}
+                                                            alt={t(option.labelKey)}
+                                                            loading="lazy"
+                                                            decoding="async"
+                                                        />
+                                                        <span className="fb-tote-design-label">{t(option.labelKey)}</span>
+                                                    </span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                        {errors.selectedDesign && (
+                                            <p className="text-red-500 text-sm mt-2">{errors.selectedDesign.message}</p>
+                                        )}
+                                    </div>
+                                ) : isBookmarksSet ? (
                                     <div>
                                         <h3 className="fb-heading text-lg mb-4">{t("sections.chooseCollection")}</h3>
                                         <div className="grid grid-cols-2 gap-3">
@@ -451,8 +543,7 @@ export function RequestForm({
                         </>
                     )}
                 </div>
-            </div>
-        </RemoveScroll>
+        </div>
     );
 }
 

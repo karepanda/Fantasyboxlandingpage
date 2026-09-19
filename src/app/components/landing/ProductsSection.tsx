@@ -25,6 +25,7 @@ export function ProductsSection({ onRequestBox }: ProductsSectionProps) {
                             productType={product.productType}
                             desc={product.desc}
                             price={product.price}
+                            originalPrice={product.originalPrice}
                             includes={product.includes}
                             img={product.img}
                             onRequestBox={onRequestBox}
