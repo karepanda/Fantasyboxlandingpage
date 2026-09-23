@@ -7,7 +7,8 @@
   "classicBox": {
     "name": "FantasyBox Classic",
     "desc": "La experiencia de lectura esencial con todos los detalles acogedores",
-    "price": "31,90 €",
+    "originalPrice": "31,90 €",
+    "salePrice": "29,90 €",
     "includes": {
       "book": "Tu libro elegido",
       "bookmark": "Marcapáginas",
@@ -20,7 +21,8 @@
   "cozyBox": {
     "name": "FantasyBox Cozy",
     "desc": "Comodidad mejorada con calidez extra y toques estéticos",
-    "price": "37,00 €",
+    "originalPrice": "37,00 €",
+    "salePrice": "35,00 €",
     "includes": {
       "everything": "Todo lo del Clásico",
       "candle": "Vela temática",

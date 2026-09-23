@@ -178,7 +178,8 @@ export const products: Product[] = [
   {
     name: "classicBox.name",
     desc: "classicBox.desc",
-    price: "classicBox.price",
+    price: "classicBox.salePrice",
+    originalPrice: "classicBox.originalPrice",
     includes: [
       "contentDialog.classic.items.sleeve.title",
       "contentDialog.classic.items.bookmark.title",
@@ -237,7 +238,8 @@ export const products: Product[] = [
   {
     name: "cozyBox.name",
     desc: "cozyBox.desc",
-    price: "cozyBox.price",
+    price: "cozyBox.salePrice",
+    originalPrice: "cozyBox.originalPrice",
     includes: [
       "cozyBox.includes.everything",
       "contentDialog.cozy.items.candle.title",

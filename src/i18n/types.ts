@@ -29,7 +29,8 @@ export interface ProductsTranslations {
   classicBox: {
     name: string;
     desc: string;
-    price: string;
+    originalPrice: string;
+    salePrice: string;
     includes: {
       book: string;
       bookmark: string;
@@ -42,7 +43,8 @@ export interface ProductsTranslations {
   cozyBox: {
     name: string;
     desc: string;
-    price: string;
+    originalPrice: string;
+    salePrice: string;
     includes: {
       everything: string;
       candle: string;
