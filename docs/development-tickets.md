@@ -6,7 +6,7 @@ These tickets are written as independent, reviewable work items. Priority is sug
 
 - **Type:** Product update
 - **Suggested priority:** High
-- **Status:** Ready for refinement
+- **Status:** implemented
 
 ### Objective
 
@@ -50,7 +50,7 @@ Show the standard prices for FantasyBox Classic and FantasyBox Cozy without pres
 
 - **Type:** Responsive UI improvement
 - **Suggested priority:** High
-- **Status:** Ready for refinement
+- **Status:** implemented
 
 ### Objective
 
@@ -99,7 +99,7 @@ Use the available screen width more effectively by arranging product cards in a 
 
 - **Type:** Analytics integration
 - **Suggested priority:** Medium
-- **Status:** Blocked pending product/privacy inputs
+- **Status:** implemented
 
 ### Objective
 
