@@ -50,6 +50,11 @@
     margin-inline: auto;
 }
 
+.fb-container-products {
+    max-width: 32rem;
+    margin-inline: auto;
+}
+
 .fb-heading {
     font-family: var(--fb-font-heading), serif;
     color: var(--fb-dark);
@@ -211,6 +216,87 @@
     gap: 0.75rem;
 }
 
+.fb-consent-banner {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 80;
+    max-width: 64rem;
+    margin-inline: auto;
+    padding: 1.25rem;
+    border: 1px solid var(--fb-tan);
+    border-radius: 1rem;
+    background-color: var(--fb-cream);
+    color: var(--fb-text);
+    box-shadow: 0 18px 45px rgb(67 40 24 / 0.28);
+}
+
+.fb-consent-content {
+    display: grid;
+    gap: 1rem;
+}
+
+.fb-consent-title {
+    font-size: 1.35rem;
+}
+
+.fb-consent-description {
+    margin-top: 0.35rem;
+    max-width: 48rem;
+    line-height: 1.55;
+}
+
+.fb-consent-actions {
+    display: grid;
+    gap: 0.75rem;
+}
+
+
+.fb-footer {
+    padding: 2.5rem 1.25rem;
+    background-color: var(--fb-dark);
+    color: var(--fb-cream);
+}
+
+.fb-footer-content {
+    display: grid;
+    max-width: 64rem;
+    margin-inline: auto;
+    gap: 1.75rem;
+}
+
+.fb-footer-tagline {
+    font-family: var(--fb-font-heading), serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.fb-footer-copyright {
+    margin-top: 0.4rem;
+    font-size: 0.875rem;
+    opacity: 0.78;
+}
+
+.fb-footer-title {
+    color: var(--fb-cream);
+    font-size: 1.15rem;
+}
+
+.fb-footer-privacy-text {
+    margin-top: 0.4rem;
+    max-width: 42rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    opacity: 0.86;
+}
+
+.fb-product-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
 .fb-tote-design-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -276,6 +362,42 @@
 
 @media (min-width: 36rem) {
     .fb-tote-design-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 48rem) {
+    .fb-footer-content {
+        grid-template-columns: minmax(14rem, 0.7fr) minmax(0, 1.3fr);
+        align-items: start;
+        gap: 3rem;
+    }
+
+    .fb-consent-content {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .fb-consent-actions {
+        grid-template-columns: repeat(2, minmax(10rem, 1fr));
+    }
+
+    .fb-container-products {
+        max-width: 48rem;
+    }
+
+    .fb-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 64rem) {
+    .fb-container-products {
+        max-width: 80rem;
+    }
+
+    .fb-product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }

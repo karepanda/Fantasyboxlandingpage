@@ -36,6 +36,7 @@ import toteBagsFull from "../../imports/tote1 prefiero estar leyendo.png";
 import toteBags480 from "../../imports/tote1-480.jpg";
 import toteBags768 from "../../imports/tote1-768.jpg";
 import toteBags1024 from "../../imports/tote1-1024.jpg";
+import type { AnalyticsProductId } from "@/lib/analytics.ts";
 
 export interface ResponsiveImage {
   src: string;
@@ -154,6 +155,7 @@ export interface ProductContents {
 }
 
 export interface Product {
+  analyticsId: AnalyticsProductId;
   name: string;
   productType?: string;
   desc: string;
@@ -176,6 +178,7 @@ const importantPurchaseInformation = {
 
 export const products: Product[] = [
   {
+    analyticsId: "classic_box",
     name: "classicBox.name",
     desc: "classicBox.desc",
     price: "classicBox.price",
@@ -235,6 +238,7 @@ export const products: Product[] = [
     },
   },
   {
+    analyticsId: "cozy_box",
     name: "cozyBox.name",
     desc: "cozyBox.desc",
     price: "cozyBox.price",
@@ -286,6 +290,7 @@ export const products: Product[] = [
     },
   },
   {
+    analyticsId: "bookmarks",
     name: "bookmarks.name",
     // Keep the Google Apps Script routing value independent of the display title.
     productType: "BookMarks",
@@ -301,6 +306,7 @@ export const products: Product[] = [
     buttonText: "bookmarks.buttonText",
   },
   {
+    analyticsId: "tote_bags",
     name: "toteBags.name",
     productType: "Tote Bags",
     desc: "toteBags.desc",
@@ -316,6 +322,7 @@ export const products: Product[] = [
     buttonText: "toteBags.buttonText",
   },
   {
+    analyticsId: "knitted_sleeve",
     name: "sleeve.name",
     desc: "sleeve.desc",
     price: "sleeve.price",
@@ -331,6 +338,7 @@ export const products: Product[] = [
 ];
 
 export interface FinishedProduct {
+  analyticsId: AnalyticsProductId;
   name: string;
   productType: string;
   price: string;
@@ -341,6 +349,7 @@ export interface FinishedProduct {
 
 export const finishedProducts: FinishedProduct[] = [
   {
+    analyticsId: "black_white_sleeve",
     name: "finishedProducts.BlackAndWhite.name",
     productType: "finishedProducts.BlackAndWhite.productType",
     price: "finishedProducts.BlackAndWhite.price",
@@ -349,6 +358,7 @@ export const finishedProducts: FinishedProduct[] = [
     img: sleeveBlackWhiteImage,
   },
   {
+    analyticsId: "red_white_sleeve",
     name: "finishedProducts.sleeveRedWhite.name",
     productType: "finishedProducts.sleeveRedWhite.productType",
     price: "finishedProducts.sleeveRedWhite.price",
@@ -357,6 +367,7 @@ export const finishedProducts: FinishedProduct[] = [
     img: sleeveRedWhiteImage,
   },
   {
+    analyticsId: "pink_green_cover",
     name: "finishedProducts.PinkGreenCover.name",
     productType: "finishedProducts.PinkGreenCover.productType",
     price: "finishedProducts.PinkGreenCover.price",
@@ -365,6 +376,7 @@ export const finishedProducts: FinishedProduct[] = [
     img: coverPinkGreenImage,
   },
   {
+    analyticsId: "kindle_vmb_sleeve",
     name: "finishedProducts.kindleVmb.name",
     productType: "finishedProducts.kindleVmb.productType",
     price: "finishedProducts.kindleVmb.price",

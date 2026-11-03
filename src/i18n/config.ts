@@ -14,6 +14,7 @@ import faqEn from './locales/en/faq.json';
 import ctaEn from './locales/en/cta.json';
 import footerEn from './locales/en/footer.json';
 import requestFormEn from './locales/en/request-form.json';
+import privacyEn from './locales/en/privacy.json';
 
 import commonEs from './locales/es/common.json';
 import heroEs from './locales/es/hero.json';
@@ -26,6 +27,7 @@ import faqEs from './locales/es/faq.json';
 import ctaEs from './locales/es/cta.json';
 import footerEs from './locales/es/footer.json';
 import requestFormEs from './locales/es/request-form.json';
+import privacyEs from './locales/es/privacy.json';
 
 
 const resources = {
@@ -41,6 +43,7 @@ const resources = {
     cta: ctaEn,
     footer: footerEn,
     requestForm: requestFormEn,
+    privacy: privacyEn,
   },
   es: {
     common: commonEs,
@@ -54,6 +57,7 @@ const resources = {
     cta: ctaEs,
     footer: footerEs,
     requestForm: requestFormEs,
+    privacy: privacyEs,
   },
 };
 

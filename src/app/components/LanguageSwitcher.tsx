@@ -10,14 +10,19 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
+import { trackLanguageChanged } from '@/lib/analytics';
 
 export const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
 
-  const handleLanguageChange = (language: string) => {
-    i18n.changeLanguage(language);
+  const handleLanguageChange = async (language: string) => {
+    if (language !== 'en' && language !== 'es') return;
+    if (i18n.resolvedLanguage === language) return;
+
+    await i18n.changeLanguage(language);
     // Update document language attribute
     document.documentElement.lang = language;
+    trackLanguageChanged(language);
     // Announce to screen readers
     const announcement = language === 'en' ? 'Language changed to English' : 'Idioma cambiado a Español';
     announceToScreenReader(announcement);

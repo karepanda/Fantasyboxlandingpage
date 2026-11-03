@@ -32,6 +32,12 @@ Open your browser and navigate to [http://localhost:5173](http://localhost:5173)
 - `pnpm preview` — Run a local web server to preview the production build.
 - `pnpm deploy` — Deploy the built production assets to GitHub Pages.
 
+## Optional GA4 analytics
+
+The landing page supports consent-gated Google Analytics 4 measurement through `VITE_GA4_MEASUREMENT_ID`. Copy `.env.example` to `.env.local`, provide the deployment's `G-...` Measurement ID, and never commit the local environment file. Without a valid ID, analytics and its consent banner remain disabled while the rest of the site continues to work.
+
+See [docs/analytics.md](./docs/analytics.md) for the consent model, event definitions, prohibited data, production configuration, and verification checklist.
+
 ---
 
 ## Project Structure

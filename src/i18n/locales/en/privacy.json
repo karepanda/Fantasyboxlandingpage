@@ -1,0 +1,6 @@
+{
+  "title": "Analytics preferences",
+  "description": "We use optional Google Analytics to understand visits and quotation engagement. We never send the contents of your form. Analytics only starts if you accept.",
+  "reject": "Reject analytics",
+  "accept": "Accept analytics"
+}

@@ -12,15 +12,16 @@ export function ProductsSection({ onRequestBox }: ProductsSectionProps) {
 
     return (
         <section id="products" className="fb-section fb-section-linen">
-            <div className="fb-container">
+            <div className="fb-container-products">
                 <SectionTitle>
                     {t("title")}
                 </SectionTitle>
 
-                <div className="space-y-6">
+                <div className="fb-product-grid">
                     {products.map((product) => (
                         <ProductCard
                             key={product.name}
+                            analyticsProductId={product.analyticsId}
                             name={product.name}
                             productType={product.productType}
                             desc={product.desc}

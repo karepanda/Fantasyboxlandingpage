@@ -1,8 +1,9 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { finishedProducts, type FinishedProduct } from "../../data/landing-data";
 import { FantasyButton } from "./FantasyButton";
 import { SectionTitle } from "./SectionTitle";
+import { trackProductRequestOpened } from "@/lib/analytics.ts";
 
 const loadRequestForm = () => import("./RequestForm").then(({ RequestForm }) => ({ default: RequestForm }));
 const LazyRequestForm = lazy(loadRequestForm);
@@ -10,10 +11,19 @@ const LazyRequestForm = lazy(loadRequestForm);
 export function AestheticSection() {
     const { t } = useTranslation("aesthetic");
     const [selectedProduct, setSelectedProduct] = useState<FinishedProduct | null>(null);
+    const isFormOpeningRef = useRef(false);
 
     const handleOrder = (product: FinishedProduct) => {
+        if (isFormOpeningRef.current) return;
+        isFormOpeningRef.current = true;
         document.getElementById("cta-section")?.scrollIntoView({ behavior: "smooth" });
+        trackProductRequestOpened(product.analyticsId);
         setSelectedProduct(product);
+    };
+
+    const handleClose = () => {
+        isFormOpeningRef.current = false;
+        setSelectedProduct(null);
     };
 
     return (
@@ -84,6 +94,7 @@ export function AestheticSection() {
             {selectedProduct && (
                 <Suspense fallback={null}>
                     <LazyRequestForm
+                        analyticsProductId={selectedProduct.analyticsId}
                         productType={t(selectedProduct.productType, { lng: "en" })}
                         productLabel={t(selectedProduct.name)}
                         initialSelectedColor={{
@@ -91,7 +102,7 @@ export function AestheticSection() {
                             value: selectedProduct.colorValue,
                         }}
                         hideColorSelector
-                        onClose={() => setSelectedProduct(null)}
+                        onClose={handleClose}
                     />
                 </Suspense>
             )}

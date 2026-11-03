@@ -1,0 +1,6 @@
+{
+  "title": "Preferencias de analítica",
+  "description": "Usamos Google Analytics de forma opcional para entender las visitas y el interés en las solicitudes de presupuesto. Nunca enviamos el contenido de tu formulario. La analítica solo se activa si aceptas.",
+  "reject": "Rechazar analítica",
+  "accept": "Aceptar analítica"
+}

@@ -1,14 +1,19 @@
-import { lazy, Suspense, useEffect, useState, type KeyboardEvent } from "react";
+import { lazy, Suspense, useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { CheckCircle } from "lucide-react";
 import { FantasyButton } from "./FantasyButton";
 import { useTranslation } from "react-i18next";
 import type { ProductContents, ResponsiveImage } from "../../data/landing-data";
 import { BoxContentsDialog } from "./BoxContentsDialog";
+import {
+    trackProductRequestOpened,
+    type AnalyticsProductId,
+} from "@/lib/analytics.ts";
 
 const loadRequestForm = () => import("./RequestForm").then(({ RequestForm }) => ({ default: RequestForm }));
 const LazyRequestForm = lazy(loadRequestForm);
 
 interface ProductCardProps {
+    analyticsProductId: AnalyticsProductId;
     name: string;
     productType?: string;
     desc: string;
@@ -23,6 +28,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({
+                                analyticsProductId,
                                 name,
                                 productType,
                                 desc,
@@ -36,9 +42,22 @@ export function ProductCard({
                             }: ProductCardProps) {
     const [isZoomed, setIsZoomed] = useState(false);
     const [isFormOpen, setIsFormOpen] = useState(false);
+    const isFormOpeningRef = useRef(false);
     const { t } = useTranslation("products");
 
     const translatedName = t(name);
+
+    const handleRequestOpen = () => {
+        if (isFormOpeningRef.current) return;
+        isFormOpeningRef.current = true;
+        trackProductRequestOpened(analyticsProductId);
+        setIsFormOpen(true);
+    };
+
+    const handleRequestClose = () => {
+        isFormOpeningRef.current = false;
+        setIsFormOpen(false);
+    };
 
     useEffect(() => {
         if (!isZoomed) return;
@@ -76,11 +95,11 @@ export function ProductCard({
                     </div>
                 )}
                 <picture className="block">
-                    <source type={img.mimeType ?? "image/webp"} srcSet={img.srcSet} sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)" />
+                    <source type={img.mimeType ?? "image/webp"} srcSet={img.srcSet} sizes="(min-width: 64rem) calc((100vw - 5.5rem) / 3), (min-width: 48rem) calc((100vw - 4rem) / 2), calc(100vw - 2.5rem)" />
                     <img
                         src={img.src}
                         srcSet={img.srcSet}
-                        sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)"
+                        sizes="(min-width: 64rem) calc((100vw - 5.5rem) / 3), (min-width: 48rem) calc((100vw - 4rem) / 2), calc(100vw - 2.5rem)"
                         width={img.width}
                         height={img.height}
                         alt={translatedName}
@@ -130,7 +149,7 @@ export function ProductCard({
                         onPointerEnter={() => void loadRequestForm()}
                         onFocus={() => void loadRequestForm()}
                         onPointerDown={() => void loadRequestForm()}
-                        onClick={() => setIsFormOpen(true)}
+                        onClick={handleRequestOpen}
                     >
                         {t(buttonText)}
                     </FantasyButton>
@@ -157,9 +176,10 @@ export function ProductCard({
             {isFormOpen && (
                 <Suspense fallback={null}>
                     <LazyRequestForm
+                        analyticsProductId={analyticsProductId}
                         productType={productType ?? t(name, { lng: "en" })}
                         productLabel={translatedName}
-                        onClose={() => setIsFormOpen(false)}
+                        onClose={handleRequestClose}
                     />
                 </Suspense>
             )}
