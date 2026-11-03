@@ -239,6 +239,8 @@ export interface CtaTranslations {
 export interface FooterTranslations {
   copyright: string;
   tagline: string;
+  privacyTitle: string;
+  privacyText: string;
 }
 
 export interface RequestFormTranslations {
@@ -337,6 +339,13 @@ export interface RequestFormTranslations {
   };
 }
 
+export interface PrivacyTranslations {
+  title: string;
+  description: string;
+  reject: string;
+  accept: string;
+}
+
 export interface Resources {
   common: CommonTranslations;
   hero: HeroTranslations;
@@ -349,6 +358,7 @@ export interface Resources {
   cta: CtaTranslations;
   footer: FooterTranslations;
   requestForm: RequestFormTranslations;
+  privacy: PrivacyTranslations;
 }
 
 // Declare module to enable type-safe useTranslation hook

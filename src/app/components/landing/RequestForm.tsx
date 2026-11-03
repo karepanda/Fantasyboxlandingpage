@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { X, CheckCircle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FantasyButton } from "./FantasyButton";
 import {useTranslation} from "react-i18next";
 import tote1Image from "../../../imports/tote1-480.jpg";
@@ -9,8 +9,13 @@ import tote3Image from "../../../imports/tote3-480.jpg";
 import tote4Image from "../../../imports/tote4-480.jpg";
 import tote5Image from "../../../imports/tote5-480.jpg";
 import tote6Image from "../../../imports/tote6-480.jpg";
+import {
+    trackQuoteRequestSubmitted,
+    type AnalyticsProductId,
+} from "@/lib/analytics.ts";
 
 interface RequestFormProps {
+    analyticsProductId: AnalyticsProductId;
     productType: string;
     productLabel: string;
     initialSelectedColor?: ColorOption;
@@ -102,6 +107,7 @@ const TOTE_DESIGN_OPTIONS: ToteDesignOption[] = [
 ];
 
 export function RequestForm({
+                                analyticsProductId,
                                 productType,
                                 productLabel,
                                 initialSelectedColor,
@@ -125,6 +131,7 @@ export function RequestForm({
     const [isSuccess, setIsSuccess] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
     const [selectedCollection, setSelectedCollection] = useState("halloween");
+    const submissionInFlightRef = useRef(false);
 
     useEffect(() => {
         const previousOverflow = document.body.style.overflow;
@@ -139,6 +146,8 @@ export function RequestForm({
     const selectedColor = watch("selectedColor");
 
     const onSubmit = async (data: FormData) => {
+        if (submissionInFlightRef.current) return;
+        submissionInFlightRef.current = true;
         setIsSubmitting(true);
         setSubmitError(null);
 
@@ -195,12 +204,14 @@ export function RequestForm({
                 }
             );
 
+            trackQuoteRequestSubmitted(analyticsProductId);
             // Set success state
             setIsSuccess(true);
         } catch (error) {
             console.error("Form submission error:", error);
             setSubmitError(t("errors.submit"));
             setIsSubmitting(false);
+            submissionInFlightRef.current = false;
         }
     };
 

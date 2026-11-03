@@ -3,12 +3,14 @@ import {
   CtaSection,
   EmotionalSection,
   FaqSection,
+  Footer,
   HeroSection,
   HowItWorksSection,
   ProductsSection,
   WhatsInsideSection,
 } from "./components/landing";
 import { Header } from "./components/Header";
+import { AnalyticsConsentBanner } from "./components/AnalyticsConsent";
 
 export default function App() {
   const scrollToForm = () => {
@@ -33,6 +35,8 @@ export default function App() {
       <FaqSection />
 
       <CtaSection />
+      <Footer />
+      <AnalyticsConsentBanner />
     </div>
   );
 }

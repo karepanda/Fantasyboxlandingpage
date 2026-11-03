@@ -21,6 +21,7 @@ export function ProductsSection({ onRequestBox }: ProductsSectionProps) {
                     {products.map((product) => (
                         <ProductCard
                             key={product.name}
+                            analyticsProductId={product.analyticsId}
                             name={product.name}
                             productType={product.productType}
                             desc={product.desc}

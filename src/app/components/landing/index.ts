@@ -3,6 +3,7 @@ export { CtaSection } from "./CtaSection";
 export { EmotionalSection } from "./EmotionalSection";
 export { FantasyButton } from "./FantasyButton";
 export { FaqSection } from "./FaqSection";
+export { Footer } from "./Footer";
 export { HeroSection } from "./HeroSection";
 export { HowItWorksSection } from "./HowItWorksSection";
 export { ProductCard } from "./ProductCard";
