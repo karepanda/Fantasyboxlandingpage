@@ -76,11 +76,11 @@ export function ProductCard({
                     </div>
                 )}
                 <picture className="block">
-                    <source type={img.mimeType ?? "image/webp"} srcSet={img.srcSet} sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)" />
+                    <source type={img.mimeType ?? "image/webp"} srcSet={img.srcSet} sizes="(min-width: 64rem) calc((100vw - 5.5rem) / 3), (min-width: 48rem) calc((100vw - 4rem) / 2), calc(100vw - 2.5rem)" />
                     <img
                         src={img.src}
                         srcSet={img.srcSet}
-                        sizes="(min-width: 34.5rem) 32rem, calc(100vw - 2.5rem)"
+                        sizes="(min-width: 64rem) calc((100vw - 5.5rem) / 3), (min-width: 48rem) calc((100vw - 4rem) / 2), calc(100vw - 2.5rem)"
                         width={img.width}
                         height={img.height}
                         alt={translatedName}

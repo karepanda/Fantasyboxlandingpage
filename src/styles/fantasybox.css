@@ -50,6 +50,11 @@
     margin-inline: auto;
 }
 
+.fb-container-products {
+    max-width: 32rem;
+    margin-inline: auto;
+}
+
 .fb-heading {
     font-family: var(--fb-font-heading), serif;
     color: var(--fb-dark);
@@ -211,6 +216,12 @@
     gap: 0.75rem;
 }
 
+.fb-product-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
 .fb-tote-design-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -276,6 +287,26 @@
 
 @media (min-width: 36rem) {
     .fb-tote-design-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 48rem) {
+    .fb-container-products {
+        max-width: 48rem;
+    }
+
+    .fb-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 64rem) {
+    .fb-container-products {
+        max-width: 80rem;
+    }
+
+    .fb-product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
