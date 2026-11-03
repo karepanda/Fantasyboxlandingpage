@@ -5,7 +5,7 @@ description: Define, plan, implement, change, or validate medium-to-large, risky
 
 # Proportional Spec-Driven Development
 
-Read the root `AGENTS.md`, `MEMORY.md`, and `docs/constitution.md` before starting. The constitution and approved spec outrank implementation convenience.
+Read the root `../../AGENTS.md`, `../../MEMORY.md`, and `docs/constitution.md` before starting. The constitution and approved spec outrank implementation convenience.
 
 ## Decide whether SDD is warranted
 
@@ -48,4 +48,4 @@ When the active harness supports delegation and the user authorizes it, read [th
 
 ## Closeout
 
-Use `change-verification`, update `MEMORY.md` only with durable state or lessons, and report requirement coverage, completed tasks, validation evidence, and unresolved blockers.
+Use `change-verification`, update `../../MEMORY.md` only with durable state or lessons, and report requirement coverage, completed tasks, validation evidence, and unresolved blockers.

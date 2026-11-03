@@ -5,7 +5,7 @@ description: Implement new or extended FantasyBox behavior in the existing React
 
 # FantasyBox Feature Development
 
-Read the root `AGENTS.md`, `CLAUDE.md`, and `MEMORY.md` before changing code.
+Read the root `../../AGENTS.md`, `CLAUDE.md`, and `../../MEMORY.md` before changing code.
 
 ## Choose the workflow
 
