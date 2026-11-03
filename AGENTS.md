@@ -1,31 +1,35 @@
-# Agent Instructions & Constraints
+# FantasyBox Landing Agent Guide
 
-This document defines strict operational rules, constraints, and validation checklists that AI coding agents **MUST** follow without exception when working in this codebase.
+FantasyBox is a bilingual React landing page for book subscription products. Keep every change focused, reviewable, and consistent with the existing experience.
 
-## Guiding Principles
-- **Minimalist Changes**: Keep changes surgical and focused. Do not refactor unrelated code.
-- **Single Source of Truth**: Refer to [CLAUDE.md](file:///E:/fantasyBox%20landing/CLAUDE.md) for full commands, layout structures, and technical design system specs.
-- **Maintain Integrity**: Preserve all existing comments, docstrings, and formatting unless instructed otherwise.
+## Read First
+- Read [CLAUDE.md](./CLAUDE.md) for commands, architecture, and design-system details.
+- Read [MEMORY.md](./MEMORY.md) for durable decisions and known project constraints.
+- For substantial features, read [docs/constitution.md](./docs/constitution.md) and use the `sdd-workflow` skill.
+- Load the matching project skill from `.agents/skills/` when its description clearly applies.
 
-##  Prohibitions (Do NOT)
-- **Do NOT use npm or yarn**: Use `pnpm` exclusively for all package operations.
-- **Do NOT install new npm packages**: Do not add packages unless absolutely necessary and explicitly approved by the user.
-- **Do NOT bypass the Custom Design System**: Do not use arbitrary inline Tailwind utility classes when equivalent custom classes in `fantasybox.css` are available.
-- **Do NOT hardcode text**: Never write user-facing English or Spanish text directly in JSX. Use i18n keys and translate both `en` and `es` files.
-- **Do NOT use global state managers**: Use local hooks (`useState`, `useContext`, `useCallback`) and props. Do not introduce Redux, Zustand, etc.
-- **Do NOT place assets in the public folder**: Place all images/media in `src/imports/` and import them via ES6 module syntax.
-- **Do NOT use `any` type**: Maintain strict TypeScript typing.
-**Do NOT modify `src/dev/`**: This directory is reserved for dev utility configurations.
+## Commands
+- Use `pnpm` only: `pnpm dev`, `pnpm build`, `pnpm preview`, and `pnpm deploy`.
+- Type-check with `pnpm exec tsc --noEmit` when TypeScript is available in the project toolchain.
+- Known baseline blockers are recorded in `MEMORY.md`; report them honestly and do not install or reconfigure dependencies without approval.
 
-## Requirements (Do)
-- **Config files**: Keep configs minimal and clean.
-- **Code style**: Use functional components, explicit TS interfaces, and clear naming.
-- **Multi-language sync**: Whenever adding a key in `src/i18n/locales/en/{ns}.json`, add the exact same key in `src/i18n/locales/es/{ns}.json`, and update the namespace interface in `src/i18n/types.ts`.
-- **Buttons**: Always use `<FantasyButton>` for interactive clicks.
+## Non-Negotiable Rules
+- Preserve unrelated work, existing comments, and formatting. Never modify `src/dev/`.
+- Do not add packages, change package-manager configuration, or alter data formats without explicit approval.
+- Use functional React components, explicit TypeScript interfaces, local hooks/props, and no `any`.
+- Put media in `src/imports/` and import it through ES modules; never add assets to `public/`.
+- Use existing classes and tokens from `src/styles/fantasybox.css`; avoid ad-hoc colors when a project token exists.
+- Use `<FantasyButton>` for button actions.
+- Put all user-facing copy in i18n. Keep `en` and `es` keys identical and update `src/i18n/types.ts`.
 
-## Post-Development Checklist
-Before declaring a task done, you must verify:
-1. **Compilation**: `pnpm build` finishes successfully without warnings or errors.
-2. **Type Safety**: `tsc --noEmit` returns zero compilation errors.
-3. **i18n Integration**: Check that translation keys exist in both locales and `types.ts`, and there are no missing translation warnings.
-4. **Style Consistency**: Custom design variables are used instead of ad-hoc colors.
+## Working Method
+- Handle small, obvious changes with a short inspect-plan-implement-verify loop.
+- Use proportional SDD for medium, large, risky, or ambiguous features. Do not implement before the spec and plan are approved.
+- Change requirements in the spec before changing its plan, tasks, or code.
+- Update `MEMORY.md` only with durable state, decisions, or lessons from substantive work.
+
+## Completion Gate
+- Inspect the final diff and confirm only requested files changed.
+- Run relevant checks from the `change-verification` skill, including i18n parity when applicable.
+- Require `pnpm build` and `pnpm exec tsc --noEmit` for application changes; if the existing toolchain prevents either command, provide the exact blocker and never claim success.
+- For UI changes, verify keyboard behavior, browser console, and mobile and desktop layouts.
