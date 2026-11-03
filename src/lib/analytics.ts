@@ -13,13 +13,14 @@ export const ANALYTICS_PRODUCT_IDS = [
 export type AnalyticsProductId = (typeof ANALYTICS_PRODUCT_IDS)[number];
 export type AnalyticsLanguageCode = "en" | "es";
 
-type DataLayerEntry = [command: string, ...values: unknown[]];
+type GtagCommand = [command: string, ...values: unknown[]];
+type DataLayerEntry = IArguments | Record<string, unknown>;
 type AnalyticsWindow = Window & Record<string, unknown>;
 
 declare global {
   interface Window {
     dataLayer?: DataLayerEntry[];
-    gtag?: (...args: DataLayerEntry) => void;
+    gtag?: (...args: GtagCommand) => void;
   }
 }
 
@@ -42,9 +43,10 @@ function setGaDisabled(disabled: boolean): void {
 
 function ensureGtag(): void {
   window.dataLayer = window.dataLayer ?? [];
-  window.gtag = window.gtag ?? ((...args: DataLayerEntry) => {
-    window.dataLayer?.push(args);
-  });
+  window.gtag = window.gtag ?? function () {
+    // Match Google's installer exactly: gtag.js expects the Arguments object.
+    window.dataLayer?.push(arguments);
+  };
 }
 
 function loadGoogleTag(): void {

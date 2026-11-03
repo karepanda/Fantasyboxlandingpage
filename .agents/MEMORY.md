@@ -18,6 +18,7 @@ Keep this file short and limited to durable project state. Do not store credenti
 - Use proportional SDD: full specs for substantial or risky work, lightweight planning for small changes.
 - Keep portable project skills under `skills`; do not duplicate them in tool-specific directories.
 - Analytics uses the direct Google tag without a new dependency. It must not load before consent and may emit only the documented `page_view`, `product_request_opened`, `quote_request_submitted`, and `language_changed` events with non-personal parameters.
+- The direct `gtag` wrapper must push its `arguments` object into `dataLayer`, matching Google's installer; pushing a rest-parameter array can leave the GA4 destination unregistered even though `gtag.js` downloads successfully.
 - The stored analytics choice is final in the current site UI. Privacy information remains available in the footer, but the site does not reopen the consent decision after a choice.
 
 ## Known Validation Constraints
