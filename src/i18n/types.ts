@@ -315,6 +315,7 @@ export interface RequestFormTranslations {
     collection: {
       halloween: string;
       autumn: string;
+      christmas: string;
       required: string;
     };
     toteDesign: {

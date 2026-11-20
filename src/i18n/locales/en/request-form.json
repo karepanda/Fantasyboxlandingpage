@@ -70,6 +70,7 @@
     "collection": {
       "halloween": "Halloween set",
       "autumn": "Autumn set",
+      "christmas": "Christmas set",
       "required": "Please choose a collection"
     },
     "toteDesign": {
