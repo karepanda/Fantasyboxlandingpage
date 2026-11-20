@@ -302,3 +302,272 @@ Allow a customer who is requesting a FantasyBox package to add eligible compleme
 - Evidence that the receiving workflow records each add-on and option correctly.
 - Successful i18n parity check.
 - Application build and TypeScript check, or the exact pre-existing toolchain blocker recorded in the handoff.
+
+---
+
+## FB-006 — Remove unused website images
+
+- **Type:** Codebase maintenance
+- **Suggested priority:** Low
+- **Status:** implemented
+
+### Objective
+
+Reduce repository and production-build clutter by identifying and removing image assets that are no longer used by the website.
+
+### Scope
+
+- Audit image files in the repository, especially assets under `src/imports/`.
+- Confirm whether each candidate image is referenced by application code, styles, metadata, documentation, or build configuration.
+- Remove only images that have no current runtime or documented use.
+- Preserve source assets that are intentionally retained for planned work only when that purpose is documented.
+
+### Implementation steps
+
+1. Create an inventory of image assets and their references across TypeScript, TSX, CSS, HTML, JSON, and Markdown files.
+2. Review dynamically selected assets and similarly named variants manually so valid images are not classified as unused based only on a text search.
+3. Record the proposed removal list and confirm any ambiguous assets before deleting them.
+4. Remove the confirmed unused files and any obsolete imports or metadata that refer to them.
+5. Build and inspect the website to confirm that all visible images still load correctly.
+
+### Acceptance criteria
+
+- [ ] Every removed image has no active reference in application code, styles, metadata, documentation, or build configuration.
+- [ ] No broken image, missing import, build error, or browser-console asset error is introduced.
+- [ ] All product, hero, section, dialog, and responsive images continue to render correctly.
+- [ ] Intentionally retained but currently unused assets have a documented reason for remaining in the repository.
+- [ ] The final handoff includes the list of removed image files.
+
+### Completion evidence
+
+- Before-and-after image inventory.
+- List of deleted assets and the checks used to establish that they were unused.
+- Visual walkthrough of all image-bearing sections and dialogs.
+- Successful application build and TypeScript check.
+
+---
+
+## FB-007 — Add a Christmas bookmark-set option
+
+- **Type:** Product feature
+- **Suggested priority:** Medium
+- **Status:** Needs product assets and content before implementation
+
+### Objective
+
+Offer a Christmas-themed collection as an additional option wherever customers can choose a bookmark set.
+
+### Required inputs
+
+- Final Christmas bookmark designs and approved product images.
+- English and Spanish collection names and descriptions.
+- Confirmed price, number of bookmarks, availability period, and inventory rules.
+- Decision on whether the Christmas set is seasonal, always visible, or hidden when unavailable.
+
+### Implementation steps
+
+1. Add the approved Christmas collection to the authoritative bookmark-set data model with a stable identifier.
+2. Add optimized product imagery using the existing asset-import conventions.
+3. Add matching English and Spanish translation content and update the i18n TypeScript schema.
+4. Display the Christmas option in the bookmark-set product experience and in every applicable request or add-on form.
+5. Include the stable collection identifier and customer-visible name in the quotation-request payload.
+6. Implement the approved seasonal visibility and unavailable-state behavior.
+7. Test the option across mobile, tablet, and desktop layouts in both supported languages.
+
+### Acceptance criteria
+
+- [ ] Customers can identify and select the Christmas bookmark set anywhere bookmark collections are offered.
+- [ ] The option shows the approved image, bilingual name, description, contents, and price.
+- [ ] The selected Christmas collection is preserved when the form is validated and is included correctly in the submitted request.
+- [ ] Seasonal visibility and unavailable states follow the approved product rules.
+- [ ] Existing bookmark collections remain unchanged and selectable.
+- [ ] The option is keyboard accessible, has visible focus, and exposes its selected state to assistive technology.
+- [ ] English and Spanish translation keys remain identical, and the i18n TypeScript schema matches them.
+
+### Completion evidence
+
+- Screenshots of the Christmas collection in English and Spanish at mobile and desktop widths.
+- Captured request payload showing the Christmas collection identifier.
+- Keyboard-selection and validation walkthrough.
+- Successful i18n parity check, application build, and TypeScript check.
+
+---
+
+## FB-008 — Show shipping prices in the product area
+
+- **Type:** Product information and UI feature
+- **Suggested priority:** Medium
+- **Status:** Needs refinement and shipping information before implementation
+
+### Objective
+
+Add a clear section near the product catalog that explains applicable shipping prices before a customer submits a quotation request.
+
+### Required inputs
+
+This ticket must be refined with the business owner before implementation. At minimum, confirm:
+
+- Shipping destinations and geographic zones.
+- Price for each zone and the currency and tax treatment.
+- Whether shipping varies by product, order size, weight, quantity, or delivery method.
+- Free-shipping thresholds, exclusions, surcharges, and promotional rules.
+- Whether the values are fixed prices, estimates, or subject to final quotation.
+- Delivery-time wording and the process for destinations not listed.
+- The authoritative owner and source for future shipping-price updates.
+
+### Proposed scope
+
+- Add a bilingual shipping-information section associated with the product area.
+- Present confirmed prices and conditions in a format that is easy to scan on mobile and desktop.
+- Clearly distinguish shipping from product, book, add-on, and final quotation prices.
+- Provide an explicit fallback instruction for destinations or situations without a confirmed price.
+
+### Acceptance criteria
+
+- [ ] All required business inputs have been supplied and approved before implementation begins.
+- [ ] The section shows every approved destination or shipping zone with the correct price and conditions.
+- [ ] Customers can tell whether each value is fixed, estimated, tax-inclusive, or subject to confirmation.
+- [ ] Product prices are not presented as including shipping unless that rule has been explicitly approved.
+- [ ] Unlisted destinations have a clear next step and are never assigned an invented price.
+- [ ] Shipping information is available in English and Spanish and remains readable at 375, 768, 1024, and 1440 px viewport widths.
+- [ ] The content is keyboard and screen-reader accessible.
+- [ ] The shipping values have one documented authoritative source and owner.
+
+### Out of scope until refinement
+
+- Automatic shipping calculations.
+- Address validation or carrier API integrations.
+- Online checkout or payment.
+- Any shipping price or rule not explicitly provided and approved by the business owner.
+
+### Completion evidence
+
+- Approved shipping-price matrix and content source.
+- Screenshots in English and Spanish at mobile and desktop widths.
+- Accessibility and responsive-layout walkthrough.
+- Successful i18n parity check, application build, and TypeScript check.
+
+---
+
+## FB-009 — Add a polished responsive navigation menu
+
+- **Type:** UX and UI improvement
+- **Suggested priority:** High
+- **Status:** Needs navigation-content refinement before implementation
+
+### Objective
+
+Improve the website's appearance and usability with a clear navigation menu that helps visitors reach the main landing-page sections on mobile, tablet, and desktop.
+
+### Proposed scope
+
+- Add desktop navigation links to the existing header.
+- Add a compact mobile menu that exposes the same destinations.
+- Use landing-page section anchors and the existing smooth in-page navigation behavior where appropriate.
+- Keep the language switcher and primary call to action easy to find.
+- Match the existing FantasyBox visual system and sticky-header behavior.
+
+### Implementation steps
+
+1. Confirm the final menu destinations, order, bilingual labels, and primary call to action.
+2. Assign stable, meaningful IDs to the approved landing-page sections.
+3. Implement desktop and mobile navigation states using semantic navigation and button elements.
+4. Add clear active, hover, focus, open, and closed states using existing FantasyBox design tokens.
+5. When the mobile menu is open, implement appropriate focus handling, keyboard dismissal, and screen-reader state announcements.
+6. Close the mobile menu after navigation and ensure the destination is not hidden behind the sticky header.
+7. Test the menu with keyboard, pointer, touch, reduced motion, and both supported languages.
+
+### Acceptance criteria
+
+- [ ] The approved main sections are reachable from a visible desktop navigation menu and an equivalent mobile menu.
+- [ ] Menu labels and destinations are correct in English and Spanish.
+- [ ] In-page navigation lands on the intended section without placing its heading behind the sticky header.
+- [ ] The current language switcher and primary call to action remain easy to find and use.
+- [ ] The mobile menu has an accessible name and communicates its expanded state.
+- [ ] The menu can be opened, navigated, and closed with a keyboard, including closing with `Escape`.
+- [ ] Focus remains visible and is restored to the menu trigger when appropriate.
+- [ ] The layout has no overlap or horizontal scrolling at 375, 768, 1024, and 1440 px viewport widths.
+- [ ] Motion respects the user's reduced-motion preference.
+
+### Open questions
+
+- [NEEDS CLARIFICATION] Which landing-page sections should appear in the menu, and in what order?
+- [NEEDS CLARIFICATION] Should the menu show the currently visible section as active?
+- [NEEDS CLARIFICATION] Which action should be the primary header call to action?
+- [NEEDS CLARIFICATION] Should the sticky header change appearance after the page is scrolled?
+
+### Completion evidence
+
+- Screenshots of desktop and mobile navigation in English and Spanish.
+- Keyboard, screen-reader-state, touch, and reduced-motion walkthrough.
+- Verification of every navigation destination at representative viewport widths.
+- Successful i18n parity check, application build, and TypeScript check.
+
+---
+
+## FB-010 — Allow customers to select individual bookmarks
+
+- **Type:** Product feature
+- **Suggested priority:** High
+- **Status:** Needs catalog and pricing refinement before implementation
+
+### Objective
+
+Add a dedicated section where customers can browse and select bookmarks individually instead of being limited to predefined bookmark sets.
+
+### Required inputs
+
+- The individual bookmark catalog, including stable identifiers, approved names, images, and descriptions.
+- The price of each bookmark and any quantity or maximum-selection rules.
+- Availability and out-of-stock behavior for each design.
+- Decision on whether individual bookmarks are standalone products, FantasyBox add-ons, or both.
+- Decision on how individual selections interact with bookmark sets and shipping prices.
+
+### Proposed scope
+
+- Display each available bookmark as an individually selectable item.
+- Show the price and availability of every bookmark before selection.
+- Allow customers to review and remove their selections before submitting a request.
+- Include stable bookmark identifiers, quantities, and displayed unit prices in the quotation-request payload.
+- Keep predefined bookmark sets available as a separate choice unless the business owner decides otherwise.
+
+### Implementation steps
+
+1. Define a typed, authoritative individual-bookmark catalog shared by the display and request experiences.
+2. Add optimized images and bilingual content for every approved bookmark.
+3. Build a responsive selection section with semantic controls, visible selection states, and clear pricing.
+4. Implement the approved quantity, duplicate-selection, maximum-selection, and availability rules.
+5. Add a live selection summary with item removal and a clear statement about excluded book or shipping costs.
+6. Extend form validation and the Google Apps Script payload contract without breaking requests that contain no individual bookmarks.
+7. Update the receiving workflow so each selected bookmark, quantity, and unit price is recorded unambiguously.
+8. Test selection, removal, validation recovery, submission, and unavailable-item behavior in both supported languages.
+
+### Acceptance criteria
+
+- [ ] Every available individual bookmark displays its approved image, bilingual name, price, and availability.
+- [ ] Customers can select and remove bookmarks individually under the approved quantity and combination rules.
+- [ ] Individual bookmarks and predefined sets are presented as distinct choices.
+- [ ] The selection summary matches the selected items and does not imply that book or shipping costs are included.
+- [ ] The submitted request contains the stable identifier, quantity, and displayed unit price of each selected bookmark.
+- [ ] The receiving quotation workflow records each selection without ambiguous combined text.
+- [ ] Existing requests with no individual bookmark selection continue to work.
+- [ ] Unavailable bookmarks cannot be selected, and previously selected items that become unavailable produce a clear recovery path.
+- [ ] All controls are keyboard accessible, expose their selected state, have visible focus, and provide accessible validation feedback.
+- [ ] The section remains readable without horizontal scrolling at 375, 768, 1024, and 1440 px viewport widths.
+- [ ] English and Spanish translation keys remain identical, and the i18n TypeScript schema matches them.
+
+### Open questions
+
+- [NEEDS CLARIFICATION] Can customers order individual bookmarks without purchasing a FantasyBox?
+- [NEEDS CLARIFICATION] Can individual bookmarks and a bookmark set be included in the same request?
+- [NEEDS CLARIFICATION] Can customers request multiple units of the same design?
+- [NEEDS CLARIFICATION] Is there a minimum or maximum number of individual bookmarks per request?
+- [NEEDS CLARIFICATION] Do individual bookmark selections affect shipping prices?
+
+### Completion evidence
+
+- Screenshots of the catalog, selected state, and summary in English and Spanish at mobile and desktop widths.
+- Keyboard walkthrough covering selection, quantity changes, removal, validation, and submission.
+- Captured request payloads for no selection, one bookmark, and multiple bookmarks.
+- Evidence that the receiving workflow records each selected bookmark correctly.
+- Successful i18n parity check, application build, and TypeScript check.
