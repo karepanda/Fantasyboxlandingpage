@@ -65,6 +65,7 @@ interface CollectionOption {
 const COLLECTION_OPTIONS: CollectionOption[] = [
     { value: "halloween", labelKey: "fields.collection.halloween" },
     { value: "autumn", labelKey: "fields.collection.autumn" },
+    { value: "christmas", labelKey: "fields.collection.christmas" },
 ];
 
 interface ToteDesignOption {
@@ -474,6 +475,7 @@ export function RequestForm({
                                                     variant={selectedCollection === option.value ? "coffee" : "secondary"}
                                                     disabled={option.disabled}
                                                     className={option.disabled ? "opacity-50 cursor-not-allowed" : ""}
+                                                    aria-pressed={selectedCollection === option.value}
                                                     onClick={() => setSelectedCollection(option.value)}
                                                 >
                                                     {t(option.labelKey)}

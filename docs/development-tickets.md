@@ -351,7 +351,7 @@ Reduce repository and production-build clutter by identifying and removing image
 
 - **Type:** Product feature
 - **Suggested priority:** Medium
-- **Status:** Needs product assets and content before implementation
+- **Status:** implemented
 
 ### Objective
 
